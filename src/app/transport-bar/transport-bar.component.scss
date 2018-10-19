@@ -1,0 +1,143 @@
+@import '../../styles.scss';
+
+:host {
+  width: 100%;
+  height: 100%;
+  //   display: flex;
+  //   align-items: center;
+}
+
+.box-wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+
+  .box-upper {
+    height: 250px;
+    flex: initial;
+    order: 1;
+    margin-right: -30px;
+    padding-top: 15px;
+    .box {
+        float: left;
+        width: 50%; 
+        .box-mode {
+            width: calc(100% - 30px);
+        }
+        .status {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            float: right;
+            position: relative;
+            top: 18px;
+            margin-left: 12px;
+        }
+    }
+  }
+
+  .box-lower {
+    flex: 1;
+    order: 2;
+    .status {
+        width: 100px;
+        float: right;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 5px;
+        border-radius: 5px;
+        background: transparent;
+        letter-spacing: 3px;
+        font-size: small;
+        position: relative;
+        top: 15px;
+        text-align: center;
+    }
+  }
+
+  .box {
+    padding: 0;
+
+    .box-title {
+      line-height: 60px;
+      height: 60px;
+      font-size: x-large;
+      font-weight: 300;
+    }
+
+    .box-mode {
+      width: 100%;
+      background: #fff;
+      margin-bottom: 5px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.10);
+      padding: 0 20px 0 5px;
+
+      .mode-type {
+        float: left;
+        line-height: 60px;
+        height: 60px;
+        font-size: 24px;
+        width: 60px;
+        text-align: center;
+        &[data-color="flight"] {
+            color: $flight;
+          }
+      
+          &[data-color="train"] {
+            color: $train;
+          }
+      
+          &[data-color="boat"] {
+            color: $boat;
+          }
+      }
+
+      .depTime {
+        width: 80px;
+        float: left;
+        line-height: 60px;
+        height: 60px;
+        font-size: medium;
+        font-weight: 300;
+        padding-left: 5px;
+        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
+      }
+
+      .id {
+        width: 100px;
+        float: left;
+        line-height: 60px;
+        height: 60px;
+        font-size: medium;
+        font-weight: 300;
+        padding-left: 20px;
+        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
+      }
+
+      .gate {
+        width: 50px;
+        float: left;
+        line-height: 60px;
+        height: 60px;
+        font-size: medium;
+        font-weight: 300;
+        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
+      }
+
+      .status {
+
+        &[data-status="ONTIME"] {
+          background-color: #27ae60;
+          color: #fff;
+          box-shadow: 0px 2px 4px rgba(#27ae60, 0.20);
+        }
+
+        &[data-status="DELAYED"] {
+          background-color: #c0392b;
+          color: #fff;
+          box-shadow: 0px 2px 4px rgba(#c0392b, 0.20);
+        }
+      }
+    }
+  }
+}

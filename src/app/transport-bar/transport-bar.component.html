@@ -1,0 +1,26 @@
+<div class="box-wrapper">
+  <div class="box-upper">
+    <div class="box" *ngFor="let harbour of harbourOptions">
+      <label class="box-title">{{harbour.destination}}</label>
+      <div class="box-mode" *ngFor="let train of harbour.items">
+        <i class="material-icons mode-type" data-color="boat">train</i>
+        <label class="depTime">{{train.depTime | date: 'shortTime'}}</label>
+        <div class="status" [attr.data-status]="train.status"></div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <div class="box-lower">
+    <div class="box" *ngFor="let island of islandOtions">
+      <label class="box-title">{{island.destination}}</label>
+      <div class="box-mode" *ngFor="let tx of island.items">
+        <i class="material-icons mode-type" data-color="flight">airplanemode_active</i>
+        <label class="depTime">{{tx.depTime | date: 'shortTime'}}</label>
+        <label class="id">{{tx.id}}</label>
+        <label class="gate">{{tx.gate}}</label>
+        <label class="status" [attr.data-status]="tx.status">{{tx.status}}</label>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>

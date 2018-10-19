@@ -1,0 +1,158 @@
+@import '../../styles.scss';
+
+:host {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.weather-time-box {
+  padding-right: 30px;
+  border-right: 1px solid rgba($accent, 0.10);
+
+  .weather {
+    display: block;
+  }
+
+  .time {
+    display: block;
+    font-weight: 300;
+    font-size: 45px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.ptf-details {
+  display: inline-block;
+  width: 375px;
+  padding: 0 30px;
+  vertical-align: middle;
+  margin-right: 120px;
+  margin-left: auto;
+
+  i {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 50%;
+    font-size: 18px;
+    position: absolute;
+    top: 3px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+
+    &[data-color="flight"] {
+      color: $flight;
+    }
+
+    &[data-color="train"] {
+      color: $train;
+    }
+
+    &[data-color="boat"] {
+      color: $boat;
+    }
+
+    &.pos-abs-0 {
+      right: -53px;
+      z-index: 1;
+    }
+
+    &.pos-abs-1 {
+      right: -76px;
+      z-index: 2;
+    }
+
+    &.pos-abs-2 {
+      right: -97px;
+      z-index: 3;
+    }
+  }
+
+  label {
+    width: 100%;
+    display: block;
+    font-size: large;
+    font-weight: 300;
+    height: 42px;
+    line-height: 42px;
+    margin: 0;
+    position: relative;
+    margin-right: 120px;
+    text-align: right;
+  }
+  p {
+      font-weight: 300;
+      text-align: right;
+      font-size: small;
+      color: rgba(#000, 0.50);
+  }
+}
+
+.ptf-label {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: $accent;
+  padding: 15px 60px 15px 30px;
+  box-shadow: 0px 0px 10px rgba(0,0,0, 0.25);
+}
+
+.ptf-notify {
+  color: $accent;
+  font-size: 100px;
+  font-weight: 300;
+  color: #fff;
+  display: inline-block;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  // padding: 30px;
+  vertical-align: middle;
+  position: relative;
+
+  label {
+    display: block;
+    color: #fff;
+  }
+
+  i {
+    vertical-align: top;
+    position: absolute;
+    top: 18px;
+    right: -36px;
+    color: #fff;
+  }
+}
+
+.ptf-fare {
+  padding: 0;
+  // vertical-align: middle;
+  text-align: left;
+  width: 100%;
+
+  label {
+    display: inline-block;
+    color: #fff;
+    text-align: left;
+
+    &.upper {
+      font-size: 30px;
+      font-weight: 300;
+      color: rgba(#fff, 0.90);
+      display: inline;
+    //   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      text-align: left;
+      margin-right: 2px;
+    }
+
+    &.lower {
+      display: inline;
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 30px;
+      color: rgba(#fff, 0.90);
+      text-align: left;
+    }
+  }
+}
