@@ -1,6 +1,12 @@
-<div class="weather-time-box">
-  <span class="weather" [innerHTML]="currentWeather"></span>
-  <span class="time">{{time | date: 'hh:mm a'}}</span>
+<div class="ptf-label">
+  <div class="ptf-notify">
+    <label>PTF</label>
+    <i class="material-icons">copyright</i>
+  </div>
+  <div class="ptf-fare" [hidden]="true">
+    <label class="upper">$ 99 </label>
+    <label class="lower"> / day</label>
+  </div>
 </div>
 <div class="ptf-details">
   <label><i class="material-icons pos-abs-0">card_travel</i>Unlimited Trips</label>
@@ -10,13 +16,7 @@
     Transporation Modes</label>
   <p>Please contact the transport helpdesk to buy a PTF pass and know more about it</p>
 </div>
-<div class="ptf-label">
-  <div class="ptf-notify">
-    <label>PTF</label>
-    <i class="material-icons">copyright</i>
-  </div>
-  <div class="ptf-fare">
-    <label class="upper">$ 99 </label>
-    <label class="lower"> / day</label>
-  </div>
+<div class="weather-time-box">
+  <span class="weather" [innerHTML]="currentWeather"></span>
+  <span class="time">{{time | date: 'hh:mm a'}}</span>
 </div>

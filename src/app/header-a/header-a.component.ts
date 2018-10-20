@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class HeaderAComponent implements OnInit {
   time = new Date();
-  currentWeather =  this._sanitizer.bypassSecurityTrustHtml(GetPartlySunny('#000000'));
+  currentWeather =  this._sanitizer.bypassSecurityTrustHtml(GetPartlySunny('#ffffff', 80));
   constructor(private _sanitizer: DomSanitizer) { }
 
   ngOnInit() {

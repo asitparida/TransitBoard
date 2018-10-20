@@ -3,8 +3,6 @@
 :host {
   width: 100%;
   height: 100%;
-  //   display: flex;
-  //   align-items: center;
 }
 
 .box-wrapper {
@@ -18,40 +16,110 @@
     order: 1;
     margin-right: -30px;
     padding-top: 15px;
+
     .box {
-        float: left;
-        width: 50%; 
-        .box-mode {
-            width: calc(100% - 30px);
+      float: left;
+      width: 50%;
+
+      .box-mode {
+        width: calc(100% - 30px);
+        padding-left: 0;
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
+
+        &.train {
+          .mode-type {
+            line-height: 48px;
+            height: 48px;
+            font-size: 18px;
+            width: 36px;
+          }
+
+          .depTime {
+            font-size: small;
+            line-height: 48px;
+            height: 48px;
+            width: 70px;
+            padding-left: 5px;
+          }
+
+          .gate {
+            font-size: small;
+            line-height: 48px;
+            height: 48px;
+          }
+
+          .id {
+            font-size: small;
+            line-height: 48px;
+            height: 48px;
+          }
+
         }
-        .status {
-            width: 24px;
-            height: 24px;
+      }
+
+      .status {
+        margin-left: auto;
+        font-size: x-small;
+        letter-spacing: 1px;
+        border-radius: 6px;
+        font-weight: 500;
+        position: relative;
+        line-height: 48px;
+        height: 48px;
+        margin-right: 24px;
+
+        &[data-status="ONTIME"] {
+          border-color: #27ae60;
+          color: #27ae60;
+          background: transparent;
+
+          &:after {
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            float: right;
-            position: relative;
-            top: 18px;
-            margin-left: 12px;
+            position: absolute;
+            content: " ";
+            top: 17px;
+            right: -21px;
+            background: #27ae60;
+          }
         }
+
+        &[data-status="DELAYED"] {
+          border-color: #c0392b;
+          color: #c0392b;
+          background: transparent;
+
+          &:after {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            position: absolute;
+            content: " ";
+            top: 17px;
+            right: -21px;
+            background: #c0392b;
+          }
+        }
+      }
     }
   }
 
   .box-lower {
     flex: 1;
     order: 2;
+
     .status {
-        width: 100px;
-        float: right;
-        height: 30px;
-        line-height: 30px;
-        padding: 0 5px;
-        border-radius: 5px;
-        background: transparent;
-        letter-spacing: 3px;
-        font-size: small;
-        position: relative;
-        top: 15px;
-        text-align: center;
+      margin-left: auto;
+      height: 48px;
+      line-height: 48px;
+      background: transparent;
+      letter-spacing: 1px;
+      font-size: x-small;
+      text-align: center;
+      position: relative;
     }
   }
 
@@ -61,7 +129,7 @@
     .box-title {
       line-height: 60px;
       height: 60px;
-      font-size: x-large;
+      font-size: large;
       font-weight: 300;
     }
 
@@ -71,71 +139,106 @@
       margin-bottom: 5px;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.10);
       padding: 0 20px 0 5px;
+      display: flex;
+      align-items: center;
+
+      .destinatiopn {
+        width: 100px;
+        line-height: 48px;
+        height: 48px;
+        font-size: small;
+        font-weight: 300;
+        padding-left: 10px;
+        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
+      }
 
       .mode-type {
-        float: left;
-        line-height: 60px;
-        height: 60px;
-        font-size: 24px;
-        width: 60px;
+        line-height: 48px;
+        height: 48px;
+        font-size: 18px;
+        width: 36px;
         text-align: center;
+
         &[data-color="flight"] {
-            color: $flight;
-          }
-      
-          &[data-color="train"] {
-            color: $train;
-          }
-      
-          &[data-color="boat"] {
-            color: $boat;
-          }
+          color: $flight;
+        }
+
+        &[data-color="train"] {
+          color: $train;
+        }
+
+        &[data-color="boat"] {
+          color: $boat;
+        }
       }
 
       .depTime {
         width: 80px;
-        float: left;
-        line-height: 60px;
-        height: 60px;
-        font-size: medium;
+        line-height: 48px;
+        height: 48px;
+        font-size: small;
         font-weight: 300;
-        padding-left: 5px;
+        padding-left: 10px;
         text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
       }
 
       .id {
         width: 100px;
-        float: left;
-        line-height: 60px;
-        height: 60px;
-        font-size: medium;
+        line-height: 48px;
+        height: 48px;
+        font-size: small;
         font-weight: 300;
         padding-left: 20px;
         text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
       }
 
       .gate {
-        width: 50px;
-        float: left;
-        line-height: 60px;
-        height: 60px;
-        font-size: medium;
+        width: 36px;
+        line-height: 48px;
+        height: 48px;
+        font-size: small;
         font-weight: 300;
         text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
       }
 
-      .status {
+      &.island {
+        padding-right: 10px;
+        .status {
+          margin-right: 24px;
 
-        &[data-status="ONTIME"] {
-          background-color: #27ae60;
-          color: #fff;
-          box-shadow: 0px 2px 4px rgba(#27ae60, 0.20);
-        }
+          &[data-status="ONTIME"] {
+            border-color: #27ae60;
+            color: #27ae60;
+            background: transparent;
 
-        &[data-status="DELAYED"] {
-          background-color: #c0392b;
-          color: #fff;
-          box-shadow: 0px 2px 4px rgba(#c0392b, 0.20);
+            &:after {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              position: absolute;
+              content: " ";
+              top: 17px;
+              right: -21px;
+              background: #27ae60;
+            }
+          }
+
+          &[data-status="DELAYED"] {
+            border-color: #c0392b;
+            color: #c0392b;
+            background: transparent;
+
+            &:after {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              position: absolute;
+              content: " ";
+              top: 17px;
+              right: -21px;
+              background: #c0392b;
+            }
+          }
         }
       }
     }
