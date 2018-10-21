@@ -2,12 +2,58 @@
   <div class="box-upper">
     <div class="box" *ngFor="let harbour of harbourOptions">
       <label class="box-title">{{harbour.destination}}</label>
-      <div class="box-mode train" *ngFor="let train of harbour.items">
+      <!-- <div class="box-mode train" *ngFor="let train of harbour.items">
         <i class="material-icons mode-type" data-color="boat">train</i>
         <label class="depTime">{{train.depTime | date: 'shortTime'}}</label>
         <div class="status" [attr.data-status]="train.status">{{train.status}}</div>
         <div class="clearfix"></div>
+      </div> -->
+      <div class="new-box-mode w50">
+        <div class="mode " data-mode="train">
+          <div class="places">
+            <div class="left">
+              <label class="left">Atlantis Hub</label>
+              <label class="left time">{{depTime | date: 'shortTime'}}</label>
+            </div>
+            <div class="mode-marker">
+              <div class="line" data-color="train"></div>
+              <i class="material-icons mode-type" data-color="train">train</i>
+            </div>
+            <div class="right">
+              <label class="right">Friday Harbour</label>
+              <label class="right time">{{depTime | date: 'shortTime'}}</label>
+            </div>
+          </div>
+          <div class="mode-info">
+            <label class="departure-gate">GATE A</label>
+            <label class="status" data-status="ONTIME">ONTIME</label>
+          </div>
+        </div>
+        <div class="clearfix"></div>
       </div>
+      <div class="new-box-mode w50">
+          <div class="mode " data-mode="train">
+            <div class="places">
+              <div class="left">
+                <label class="left">Atlantis Hub</label>
+                <label class="left time">{{depTime | date: 'shortTime'}}</label>
+              </div>
+              <div class="mode-marker">
+                <div class="line" data-color="train"></div>
+                <i class="material-icons mode-type" data-color="train">train</i>
+              </div>
+              <div class="right">
+                <label class="right">Friday Harbour</label>
+                <label class="right time">{{depTime | date: 'shortTime'}}</label>
+              </div>
+            </div>
+            <div class="mode-info">
+              <label class="departure-gate">GATE A</label>
+              <label class="status" data-status="ONTIME">ONTIME</label>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
     </div>
   </div>
   <div class="box-lower">
@@ -15,50 +61,71 @@
       <label class="box-title">{{island.destination}}</label>
       <div class="new-box-mode connection">
         <div class="mode mode-a" data-mode="train">
-            <div class="places">
-                <label class="left">Atlantis Hub</label>
-                <label class="right">Friday Harbour</label>
-                <label class="left time">{{depTime | date: 'shortTime'}}</label>
-                <label class="right time">{{depTime | date: 'shortTime'}}</label>
+          <div class="places">
+            <div class="left">
+              <label class="left">Atlantis Hub</label>
+              <label class="left time">{{depTime | date: 'shortTime'}}</label>
             </div>
-            <div class="mode-info">
-                <i class="material-icons mode-type" data-color="train">train</i>
-                <label class="departure-gate">GATE A</label>
-                <label class="status" data-status="ONTIME">ONTIME</label>
+            <div class="mode-marker">
+              <div class="line" data-color="train"></div>
+              <i class="material-icons mode-type" data-color="train">train</i>
             </div>
+            <div class="right">
+              <label class="right">Friday Harbour</label>
+              <label class="right time">{{depTime | date: 'shortTime'}}</label>
+            </div>
+          </div>
+          <div class="mode-info">
+            <label class="departure-gate">GATE A</label>
+            <label class="status" data-status="ONTIME">ONTIME</label>
+          </div>
         </div>
         <div class="mode mode-b" data-mode="boat">
-            <div class="places">
-                <label class="left">Friday Harbour</label>
-                <label class="right">Orcas Harbour</label>
-                <label class="left time">{{depTime | date: 'shortTime'}}</label>
-                <label class="right time">{{depTime | date: 'shortTime'}}</label>
+          <div class="places">
+            <div class="left">
+              <label class="left">Friday Harbour</label>
+              <label class="left time">{{depTime | date: 'shortTime'}}</label>
             </div>
-            <div class="mode-info">
-                <i class="material-icons mode-type" data-color="boat">directions_boat</i>
-                <label class="departure-gate">DOCK A</label>
-                <label class="status" data-status="ONTIME">ONTIME</label>
+            <div class="mode-marker">
+              <div class="line" data-color="boat"></div>
+              <i class="material-icons mode-type" data-color="boat">directions_boat</i>
             </div>
+            <div class="right">
+              <label class="right">Orcas Harbour</label>
+              <label class="right time">{{depTime | date: 'shortTime'}}</label>
+            </div>
+          </div>
+          <div class="mode-info">
+            <label class="departure-gate">DOCK A</label>
+            <label class="status" data-status="ONTIME">ONTIME</label>
+          </div>
         </div>
         <div class="clearfix"></div>
       </div>
       <div class="new-box-mode">
-          <div class="mode" data-mode="flight">
-              <div class="places">
-                  <label class="left">Atlantis Hub</label>
-                  <label class="right">Friday Harbour</label>
-                  <label class="left time">{{depTime | date: 'shortTime'}}</label>
-                  <label class="right time">{{depTime | date: 'shortTime'}}</label>
-              </div>
-              <div class="mode-info">
-                  <i class="material-icons mode-type" data-color="flight">airplanemode_active</i>
-                  <label class="departure-gate">GATE A</label>
-                  <label class="airline-name">Spirit - SP101</label>
-                  <label class="status" data-status="ONTIME">ONTIME</label>
-              </div>
+        <div class="mode" data-mode="flight">
+          <div class="places">
+            <div class="left">
+              <label class="left">Atlantis Hub</label>
+              <label class="left time">{{depTime | date: 'shortTime'}}</label>
+            </div>
+            <div class="mode-marker">
+              <div class="line" data-color="boat"></div>
+              <i class="material-icons mode-type" data-color="flight">airplanemode_active</i>
+            </div>
+            <div class="right">
+              <label class="right">Stuart Island</label>
+              <label class="right time">{{depTime | date: 'shortTime'}}</label>
+            </div>
           </div>
-          <div class="clearfix"></div>
+          <div class="mode-info">
+            <label class="departure-gate">GATE A</label>
+            <label class="airline-name">Spirit - SP101</label>
+            <label class="status" data-status="ONTIME">ONTIME</label>
+          </div>
         </div>
+        <div class="clearfix"></div>
+      </div>
       <!-- <div class="box-mode island" *ngFor="let tx of island.items">
         <i class="material-icons mode-type" data-color="flight" *ngIf="tx.mode==='flight'">airplanemode_active</i>
         <i class="material-icons mode-type" data-color="train"*ngIf="tx.mode==='train'">train</i>

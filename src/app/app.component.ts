@@ -16,7 +16,7 @@ export class AppComponent implements AfterViewInit {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/asitparida/cjni9a4ks1n2v2rqw6u52ggcn',
-      center: [-123.039808, 48.57],
+      center: [-123.039808, 48.583000],
       zoom: 9.80,
       interactive: false
     });

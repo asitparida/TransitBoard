@@ -35,12 +35,12 @@ export class TransportBarComponent implements OnInit {
         { mode: 'boat', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'ONTIME' }
       ]
     },
-    {
-      destination: 'Orcas Island', items: [
-        { mode: 'flight', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'ONTIME' },
-        { mode: 'flight', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'ONTIME' }
-      ]
-    },
+    // {
+    //   destination: 'Orcas Island', items: [
+    //     { mode: 'flight', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'ONTIME' },
+    //     { mode: 'flight', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'ONTIME' }
+    //   ]
+    // },
     // {
     //   destination: 'Lopez Island', items: [
     //     { mode: 'flight', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'ONTIME' },
