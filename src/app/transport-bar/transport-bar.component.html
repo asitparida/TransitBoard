@@ -12,16 +12,64 @@
   </div>
   <div class="box-lower">
     <div class="box" *ngFor="let island of islandOtions">
-      <!-- <label class="box-title">{{island.destination}}</label> -->
-      <div class="box-mode island" *ngFor="let tx of island.items">
-        <label class="destinatiopn">{{island.destination}}</label>
-        <i class="material-icons mode-type" data-color="flight">airplanemode_active</i>
+      <label class="box-title">{{island.destination}}</label>
+      <div class="new-box-mode connection">
+        <div class="mode mode-a" data-mode="train">
+            <div class="places">
+                <label class="left">Atlantis Hub</label>
+                <label class="right">Friday Harbour</label>
+                <label class="left time">{{depTime | date: 'shortTime'}}</label>
+                <label class="right time">{{depTime | date: 'shortTime'}}</label>
+            </div>
+            <div class="mode-info">
+                <i class="material-icons mode-type" data-color="train">train</i>
+                <label class="departure-gate">GATE A</label>
+                <label class="status" data-status="ONTIME">ONTIME</label>
+            </div>
+        </div>
+        <div class="mode mode-b" data-mode="boat">
+            <div class="places">
+                <label class="left">Friday Harbour</label>
+                <label class="right">Orcas Harbour</label>
+                <label class="left time">{{depTime | date: 'shortTime'}}</label>
+                <label class="right time">{{depTime | date: 'shortTime'}}</label>
+            </div>
+            <div class="mode-info">
+                <i class="material-icons mode-type" data-color="boat">directions_boat</i>
+                <label class="departure-gate">DOCK A</label>
+                <label class="status" data-status="ONTIME">ONTIME</label>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="new-box-mode">
+          <div class="mode" data-mode="flight">
+              <div class="places">
+                  <label class="left">Atlantis Hub</label>
+                  <label class="right">Friday Harbour</label>
+                  <label class="left time">{{depTime | date: 'shortTime'}}</label>
+                  <label class="right time">{{depTime | date: 'shortTime'}}</label>
+              </div>
+              <div class="mode-info">
+                  <i class="material-icons mode-type" data-color="flight">airplanemode_active</i>
+                  <label class="departure-gate">GATE A</label>
+                  <label class="airline-name">Spirit - SP101</label>
+                  <label class="status" data-status="ONTIME">ONTIME</label>
+              </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      <!-- <div class="box-mode island" *ngFor="let tx of island.items">
+        <i class="material-icons mode-type" data-color="flight" *ngIf="tx.mode==='flight'">airplanemode_active</i>
+        <i class="material-icons mode-type" data-color="train"*ngIf="tx.mode==='train'">train</i>
+        <i class="material-icons mode-type" data-color="boat" *ngIf="tx.mode==='boat'">directions_boat</i>
         <label class="depTime">{{tx.depTime | date: 'shortTime'}}</label>
         <label class="id">{{tx.id}}</label>
         <label class="gate">{{tx.gate}}</label>
         <label class="status" [attr.data-status]="tx.status">{{tx.status}}</label>
         <div class="clearfix"></div>
-      </div>
+      </div> -->
+      <div class="clearfix"></div>
     </div>
   </div>
 </div>

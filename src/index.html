@@ -8,19 +8,43 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Slabo+27px" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox.js/plugins/arc.js/v0.1.0/arc.js'></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js' charset='utf-8'></script>
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Slabo 27px', serif;
       font-family: 'Roboto', sans-serif;
+      background-color: #f0f0f0;
     }
+    .overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
 
+.overlay button {
+    font:600 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background-color: #3386c0;
+    color: #fff;
+    display: inline-block;
+    margin: 0;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.overlay button:hover {
+    background-color:#4ea0da;
+}
   </style>
 </head>
 

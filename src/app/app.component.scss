@@ -5,7 +5,7 @@
   height: 100vh;
   overflow: hidden;
   flex-flow: row;
-  background: #fff;
+  background: #f6f6f6;
 
   .display-wrapper {
     width: 100%;
@@ -26,21 +26,21 @@
       }
 
       .display-left-top {
-        order: 1;
+        order: 2;
         height: 250px;
         flex: initial;
-        padding: 10px;
+        padding: 0px;
         display: flex;
         align-items: center;
         flex-flow: row;
       }
 
       .display-left-bottom {
-        order: 2;
+        order: 1;
         flex: 1;
         overflow: hidden;
-
-        padding: 0 10px 10px 10px;
+        padding: 30px 30px 0px 30px;
+        background: #fff;
 
         #map {
           width: 100%;
@@ -51,12 +51,106 @@
     }
 
     .display-right {
-      width: 500px;
+      width: 600px;
       flex: initial;
       order: 2;
       height: 100%;
-      background: lighten(#3498db, 45);
-      padding: 0 30px 0 30px;
+      // background: lighten(#3498db, 45);
+      padding: 0px 0 0 0;
     }
   }
 }
+
+
+.marker {
+  display: block;
+  &.hub {
+    label {
+      background-color: $accent2;
+      color: #fff;
+      padding: 4px;
+      border-radius: 4px;
+    }
+  }
+
+  &.harbour {
+    label {
+      font-size: x-small;
+    }
+  }
+
+  .img {
+    border: none;
+    cursor: pointer;
+    height: 36px;
+    width: 36px;
+    -webkit-mask-image: url(../assets/baseline_location_on_black_48dp.png);
+    mask-image: url(../assets/baseline_location_on_black_48dp.png);
+    mask-size: contain;
+    background-repeat: no-repeat;
+    background-color: $accent2;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .img-holder {
+    display: block;
+    width: 36px;
+    height: 12px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .flight {
+    border: none;
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    -webkit-mask-image: url(../assets/baseline_flight_black_48dp.png);
+    mask-image: url(../assets/baseline_flight_black_48dp.png);
+    mask-size: contain;
+    background-repeat: no-repeat;
+    background-color: #333;
+    display: inline-block;
+  }
+
+  .boat {
+    border: none;
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    -webkit-mask-image: url(../assets/baseline_directions_boat_black_48dp.png);
+    mask-image: url(../assets/baseline_directions_boat_black_48dp.png);
+    mask-size: contain;
+    background-repeat: no-repeat;
+    background-color: #333;
+    display: inline-block;
+  }
+
+  .train {
+    border: none;
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    -webkit-mask-image: url(../assets/baseline_train_black_48dp.png);
+    mask-image: url(../assets/baseline_train_black_48dp.png);
+    mask-size: contain;
+    background-repeat: no-repeat;
+    background-color: #333;
+    display: inline-block;
+  }
+}
+
+.mapboxgl-popup {
+  padding-bottom: 50px;
+}
+.mapboxgl-ctrl-bottom-left,
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+.path-start {
+  -webkit-transition:stroke-dashoffset 5s ease-in;
+     -moz-transition:stroke-dashoffset 5s ease-in;
+       -o-transition:stroke-dashoffset 5s ease-in;
+          transition:stroke-dashoffset 5s ease-in;
+  }
