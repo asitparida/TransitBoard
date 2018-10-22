@@ -3,6 +3,7 @@
 :host {
   width: 100%;
   height: 100%;
+  // font-family: 'Roboto', sans-serif;
 }
 
 .box-wrapper {
@@ -17,13 +18,13 @@
     order: 2;
     margin-right: -30px;
     padding-top: 15px;
-    background: #f9f9f9;
     padding: 0 30px 0 30px;
 
     .box {
       float: left;
       width: calc(50% - 30px);
       margin-right: 15px;
+
       &:nth-child(2n+2) {
         margin-left: 15px;
       }
@@ -34,83 +35,9 @@
         padding-right: 10px;
         display: flex;
         align-items: center;
-
-        &.train {
-          .mode-type {
-            line-height: 48px;
-            height: 48px;
-            font-size: 18px;
-            width: 36px;
-          }
-
-          .depTime {
-            font-size: 12px;
-            line-height: 48px;
-            height: 48px;
-            width: 70px;
-            padding-left: 5px;
-          }
-
-          .gate {
-            font-size: 12px;
-            line-height: 48px;
-            height: 48px;
-          }
-
-          .id {
-            font-size: 12px;
-            line-height: 48px;
-            height: 48px;
-          }
-
-        }
       }
 
-      .status {
-        margin-left: auto;
-        font-size: x-12px;
-        letter-spacing: 1px;
-        border-radius: 6px;
-        font-weight: 500;
-        position: relative;
-        line-height: 48px;
-        height: 48px;
-        margin-right: 24px;
 
-        &[data-status="ONTIME"] {
-          border-color: #27ae60;
-          color: #27ae60;
-          background: transparent;
-
-          &:after {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            position: absolute;
-            content: " ";
-            top: 17px;
-            right: -21px;
-            background: #27ae60;
-          }
-        }
-
-        &[data-status="DELAYED"] {
-          border-color: #c0392b;
-          color: #c0392b;
-          background: transparent;
-
-          &:after {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            position: absolute;
-            content: " ";
-            top: 17px;
-            right: -21px;
-            background: #c0392b;
-          }
-        }
-      }
     }
   }
 
@@ -119,142 +46,32 @@
     order: 1;
     padding: 0px 30px 0 30px;
 
-    .status {
-      margin-left: auto;
-      height: 48px;
-      line-height: 48px;
-      background: transparent;
-      letter-spacing: 1px;
-      font-size: x-12px;
-      text-align: center;
-      position: relative;
-      margin-right: 25px;
-    }
+    // .status {
+    //   margin-left: auto;
+    //   height: 48px;
+    //   line-height: 48px;
+    //   background: transparent;
+    //   letter-spacing: 1px;
+    //   font-size: x-12px;
+    //   text-align: center;
+    //   position: relative;
+    //   margin-right: 25px;
+    // }
   }
 
   .box {
     padding: 0;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 
     .box-title {
-      line-height: 48px;
-      height: 48px;
-      font-size: large;
-      font-weight: 300;
+      padding: 10px 15px 5px 15px;
+      // margin-bottom: 10px;
+      font-size: x-large;
+      font-weight: 500;
       width: 100%;
       float: left;
-    }
-
-    .box-mode {
-      width: 50%;
-      background: #fff;
-      margin-bottom: 5px;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
-      padding: 0 20px 0 10px;
-      display: flex;
-      align-items: center;
-      box-sizing: border-box;
-      float: left;
-
-      .destinatiopn {
-        width: 100px;
-        line-height: 48px;
-        height: 48px;
-        font-size: x-12px;
-        font-weight: 300;
-        padding-left: 5px;
-        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
-      }
-
-      .mode-type {
-        line-height: 48px;
-        height: 48px;
-        font-size: 15px;
-        width: 24px;
-        text-align: center;
-
-        &[data-color="flight"] {
-          color: $flight;
-        }
-
-        &[data-color="train"] {
-          color: $train;
-        }
-
-        &[data-color="boat"] {
-          color: $boat;
-        }
-      }
-
-      .depTime {
-        width: 100px;
-        line-height: 48px;
-        height: 48px;
-        font-size: x-12px;
-        font-weight: 300;
-        padding-left: 5px;
-        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
-      }
-
-      .id {
-        width: 100px;
-        line-height: 48px;
-        height: 48px;
-        font-size: x-12px;
-        font-weight: 300;
-        padding-left: 10px;
-        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
-      }
-
-      .gate {
-        width: 36px;
-        line-height: 48px;
-        height: 48px;
-        font-size: x-12px;
-        font-weight: 300;
-        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
-      }
-
-      &.island {
-        padding-right: 10px;
-
-        .status {
-
-          &[data-status="ONTIME"] {
-            border-color: #27ae60;
-            color: #27ae60;
-            background: transparent;
-
-            &:after {
-              width: 12px;
-              height: 12px;
-              border-radius: 50%;
-              position: absolute;
-              content: " ";
-              top: 17px;
-              right: -21px;
-              background: #27ae60;
-            }
-          }
-
-          &[data-status="DELAYED"] {
-            border-color: #c0392b;
-            color: #c0392b;
-            background: transparent;
-
-            &:after {
-              width: 12px;
-              height: 12px;
-              border-radius: 50%;
-              position: absolute;
-              content: " ";
-              top: 17px;
-              right: -21px;
-              background: #c0392b;
-            }
-          }
-        }
-      }
+      color: #fff;
+      letter-spacing: 1px;
     }
   }
 }
@@ -262,121 +79,222 @@
 .new-box-mode {
   width: 100%;
   float: left;
-  margin-bottom: 10px;
+  margin-bottom: 17px;
+  background-image: linear-gradient(to right, #414c5e, #263548);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.10);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 
-  &.connection {
-    .mode {
-      width: calc(50% - 15px);
+  .status {
+    // width: 80px;
+    text-align: right;
+    height: 18px;
+    line-height: 18px;
+    background: transparent;
+    letter-spacing: 1px;
+    font-size: 12px;
+    position: relative;
+    float: right;
+    font-weight: 300;
+    margin-right: 0px;
+    padding: 0 5px;
+    // opacity: 0.80;
+    border-radius: 4px;
+    top: 2px;
+
+    &[data-status="ONTIME"] {
+      border-color: #27ae60;
+      color: #27ae60;
+      background: transparent;
+      padding-right: 0;
+
+      // &:after {
+      //   width: 12px;
+      //   height: 12px;
+      //   border-radius: 50%;
+      //   position: absolute;
+      //   content: " ";
+      //   top: 4px;
+      //   right: -21px;
+      //   background: #27ae60;
+      // }
+    }
+
+    &[data-status="DELAYED"] {
+      border-color: #e74c3c;
+      color: #fff;
+      background: #e74c3c;
+      opacity: 0.90;
+
+      // &:after {
+      //   width: 12px;
+      //   height: 12px;
+      //   border-radius: 50%;
+      //   position: absolute;
+      //   content: " ";
+      //   top: 4px;
+      //   right: -21px;
+      //   background: #e74c3c;
+      // }
     }
   }
 
+  &.connection {
+    position: relative;
+
+    .mode {
+      width: 50%;
+    }
+
+    &:after {
+      left: 50%;
+      border-left: 1px dashed #000;
+      width: 1px;
+      height: 100%;
+      content: "";
+      position: absolute;
+      top: 0;
+    }
+  }
+
+
   .mode {
     background: #fff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.10);
     width: 100%;
     float: left;
-    padding: 10px 10px 10px 10px;
+    padding: 0px 15px 10px 15px;
+    border-left-color: #fff;
+    background: transparent;
     // border-left: 2px solid transparent;
 
     &[data-mode="boat"] {
-      border-left-color: $boat;
+      // border-left-color: $boat;
     }
 
     &[data-mode="train"] {
-      border-left-color: $train;
+      // border-left-color: $train;
     }
 
     &[data-mode="flight"] {
-      border-left-color: $flight;
+      // border-left-color: $flight;
+    }
+
+    &.standalone {
+      // background-image: linear-gradient(to right, #414c5e, #263548);
     }
 
     &.mode-a {
-      margin-right: 15px;
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
+      // margin-right: 15px;
       position: relative;
+      // background-image: linear-gradient(to right, #414c5e, #334053);
 
-      &:after {
-        position: absolute;
-        top: 43px;
-        right: 0;
-        width: 30px;
-        border-top: 1px solid rgba(0, 0, 0, 0.10);
-        content: "";
-        margin-right: -30px;
-        z-index: 1;
-      }
-      &:before {
-        content:"+";
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        color: #909090;
-        background: #e0e0e0;
-        position: absolute;
-        margin-right: -10px;
-        top: 36px;
-        right: -13px;
-        line-height: 15px;
-        text-align: center;
-        z-index: 2;
-      }
+      // &:after {
+      //   position: absolute;
+      //   top: 43px;
+      //   right: 0;
+      //   width: 30px;
+      //   border-top: 1px solid rgba(0, 0, 0, 0.10);
+      //   content: "";
+      //   margin-right: -30px;
+      //   z-index: 1;
+      // }
+
+      // &:before {
+      //   content: "+";
+      //   width: 15px;
+      //   height: 15px;
+      //   border-radius: 50%;
+      //   color: $light_accent;
+      //   // background: #e0e0e0;
+      //   position: absolute;
+      //   margin-right: -10px;
+      //   top: 36px;
+      //   right: -13px;
+      //   line-height: 15px;
+      //   text-align: center;
+      //   z-index: 2;
+      // }
     }
 
     &.mode-b {
-      margin-left: 15px;
+      border-bottom-left-radius: 0px;
+      border-top-left-radius: 0px;
+      // margin-left: 15px;
+      // border-left: 1px dashed #000;
+      // background-image: linear-gradient(to right, #334053, #263548);
     }
 
     &.mode-b {
       padding-left: 10px;
-      border-right: 1px dashed rgba(0, 0, 0, 0.0);
+      border-right: 1px solid #1c2536;
+    }
+
+    .destination-name {
+      text-transform: capitalize;
     }
 
     .places {
       width: 100%;
       line-height: 36px;
       height: 36px;
+      position: relative;
 
       label {
         width: 80px;
         float: left;
+        color: $light_accent2;
 
         &:not(.time) {
           line-height: 20px;
           height: 20px;
-          font-size: 12px;
-          font-weight: 400;
+          font-size: small;
+          font-weight: 300;
         }
 
         &.time {
-          height: 20px;
-          line-height: 20px;
-          font-size: 12px;
-          font-weight: 300
+          height: 24px;
+          line-height: 24px;
+          font-size: large;
+          font-weight: 300;
+
+          &.left {
+            color: #fff;
+          }
         }
 
         &.left {
+          width: 100%;
           text-align: left;
         }
 
         &.right {
+          width: 100%;
           text-align: right;
         }
       }
 
       .mode-marker {
-        width: calc(100% - 160px);
-        float: left;
+        width: 100%;
+        // float: left;
         height: 100%;
-        position: relative;
+        position: absolute;
         top: 10px;
+        // left: 50%;
+        display: block;
 
         .line {
           position: absolute;
-          width: 80%;
+          width: 40%;
           height: 1px;
           top: 50%;
-          left: 10%;
+          left: 30%;
           z-index: 1;
           border-top: 1px dashed transparent;
+
           &[data-color="flight"] {
             border-top-color: rgba($flight, 0.20);
           }
@@ -393,10 +311,10 @@
         }
 
         .mode-type {
-          width: 24px;
+          width: 36px;
           height: 36px;
           line-height: 36px;
-          font-size: medium;
+          font-size: large;
           display: block;
           margin: 0 auto;
           z-index: 1;
@@ -421,13 +339,14 @@
       }
 
       .left {
-        width: 80px;
+        width: 50%;
         float: left;
       }
 
       .right {
-        width: 80px;
+        width: 50%;
         float: left;
+        color: $light_accent2;
       }
     }
 
@@ -474,65 +393,55 @@
         font-size: 12px;
         font-weight: 300;
         float: left;
+        color: $light_accent2;
+        text-transform: capitalize;
       }
 
       .airline-name {
-        width: calc(100% - 180px);
+        // width: calc(100% - 180px);
+        width: 100%;
         text-align: center;
-        text-transform: uppercase;
+        // text-transform: uppercase;
       }
 
       .departure-gate {
         width: 80px;
-      }
-
-      .status {
-        width: 80px;
-        text-align: right;
-        height: 20px;
-        line-height: 20px;
-        background: transparent;
-        letter-spacing: 1px;
-        font-size: 12px;
-        position: relative;
-        float: right;
-        font-weight: 300;
-        margin-right: 20px;
-
-        &[data-status="ONTIME"] {
-          border-color: #27ae60;
-          color: #27ae60;
-          background: transparent;
-
-          &:after {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            position: absolute;
-            content: " ";
-            top: 4px;
-            right: -21px;
-            background: #27ae60;
-          }
-        }
-
-        &[data-status="DELAYED"] {
-          border-color: #c0392b;
-          color: #c0392b;
-          background: transparent;
-
-          &:after {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            position: absolute;
-            content: " ";
-            top: 4px;
-            right: -21px;
-            background: #c0392b;
-          }
-        }
+        float: right !important;
+        display: none;
       }
     }
   }
+}
+
+.boat {
+  height: 36px;
+  width: 36px;
+  -webkit-mask-image: url(../../assets/noun_Boat_1729202.png);
+  mask-image: url(../../assets/noun_Boat_1729202.png);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  background-color: $light_accent2;
+  mask-position: center;
+}
+
+.plane {
+  height: 36px;
+  width: 36px;
+  -webkit-mask-image: url(../../assets/noun_Plane_539326.png);
+  mask-image: url(../../assets/noun_Plane_539326.png);
+  mask-size: 22px;
+  mask-repeat: no-repeat;
+  background-color: $light_accent2;
+  mask-position: center;
+}
+
+.train {
+  height: 36px;
+  width: 36px;
+  -webkit-mask-image: url(../../assets/noun_Train_130288.png);
+  mask-image: url(../../assets/noun_Train_130288.png);
+  mask-size: 22px;
+  mask-repeat: no-repeat;
+  background-color: $light_accent2;
+  mask-position: center 5px;
 }

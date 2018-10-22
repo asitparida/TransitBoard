@@ -15,7 +15,8 @@ export class AppComponent implements AfterViewInit {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYXNpdHBhcmlkYSIsImEiOiJjajJhMzl6OHowMDEzMzJwaTVrdWphY2V4In0.vNu71gEwtnCUsEK671XM0w';
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/asitparida/cjni9a4ks1n2v2rqw6u52ggcn',
+      // style: 'mapbox://styles/asitparida/cjni9a4ks1n2v2rqw6u52ggcn',
+      style: 'mapbox://styles/asitparida/cjnjrf76471us2snz4fpyrxy3',
       center: [-123.039808, 48.583000],
       zoom: 9.80,
       interactive: false
@@ -42,8 +43,8 @@ export class AppComponent implements AfterViewInit {
             'line-cap': 'round'
           },
           'paint': {
-            'line-color': '#3f51b5',
-            'line-width': 2,
+            'line-color': '#71e9d0',
+            'line-width': 1,
             'line-dasharray': [2, 2]
           }
         });

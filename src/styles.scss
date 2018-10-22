@@ -2,13 +2,49 @@
 $bg: #ffde03;
 $light: #e1f0fa;
 $accent: #0336ff;
-$flight: #3498db;
-$train: #8e44ad;
-$boat: #006266;
-// $flight: #000;
-// $train: #000;
-// $boat: #000;
+// $flight: #3498db;
+// $train: #8e44ad;
+// $boat: #006266;
+$flight: #f0f0f0;
+$train: #f0f0f0;
+$boat: #f0f0f0;
+$light_accent: #f0f0f0;
+$light_accent2: #c0c0c0;
+$light-text-color: rgba(255, 255, 255, 0.80);
+$light-text-color2: rgba(255, 255, 255, 0.80);
 $accent2: #000;
+
+@font-face {
+  font-family: 'Gidole';
+  src: url('/src/assets/Gidole-Regular.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('/src/assets/din/DIN_Light.otf');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'DIN';
+  src: url('/src/assets/din/DIN_Medium.otf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'DIN';
+  src: url('/src/assets/din/DIN_Regular.otf');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'DIN';
+  src: url('/src/assets/din/DIN_Bold.otf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'DIN';
+  src: url('/src/assets/din/DIN_Black.otf');
+  font-weight: 600;
+}
 
 * {
   box-sizing: border-box;
@@ -21,8 +57,8 @@ $accent2: #000;
 }
 
 /deep/ .sun-rays {
-//   animation: pop-scale 6s linear 0s infinite;
-//   transform-origin: center;
+  //   animation: pop-scale 6s linear 0s infinite;
+  //   transform-origin: center;
 }
 
 @keyframes pop-scale {

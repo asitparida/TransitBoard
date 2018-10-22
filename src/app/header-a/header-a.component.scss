@@ -5,15 +5,15 @@
   display: flex;
   align-items: center;
   height: 100%;
-  background: #fff;
-  padding: 30px;
+  background: #1c2536;
+  padding: 30px 0 30px 30px;
 }
 
 .weather-time-box {
   padding-left: 30px;
-  border-left: 1px solid rgba(#000000, 0.10);
+  border-left: 1px solid rgba(255, 255, 255, 0.10);
   margin-left: auto;
-  color: #000;
+  color: $light-text-color;
 
   .weather {
     display: block;
@@ -22,18 +22,18 @@
   .time {
     display: block;
     font-weight: 300;
-    font-size: 36px;
+    font-size: 30px;
     // text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   }
 }
 
 .ptf-details {
   display: inline-block;
-  width: 375px;
+  width: 300px;
   padding: 0 30px;
-  vertical-align: middle;
-  margin-left: 100px;
-  color: #000;
+  vertical-align: small;
+  margin-left: 70px;
+  color: $light-text-color;
 
   i {
     height: 30px;
@@ -48,17 +48,17 @@
     // text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.10);
 
     &[data-color="flight"] {
-      color: $flight;
+      color: $light-text-color;
       // color: #000;
     }
 
     &[data-color="train"] {
-      color: $train;
+      color: $light-text-color;
       // color: #000;
     }
 
     &[data-color="boat"] {
-      color: $boat;
+      color: $light-text-color;
       // color: #000;
       
     }
@@ -94,11 +94,11 @@
   }
 
   p {
-    font-weight: 400;
+    font-weight: 300;
     text-align: left;
     font-size: small;
     // color: rgba(#000, 0.75);
-    color: #000;
+    color: $light-text-color;
     margin-top: 10px;
   }
 }
@@ -116,7 +116,7 @@
 
 .ptf-notify {
   // color: $accent;
-  color: #000;
+  color: $light-text-color2;
   font-size: 80px;
   font-weight: 300;
   display: inline-block;
@@ -127,7 +127,7 @@
   label {
     text-transform: lowercase;
     // color:$accent;
-    color: #000;
+    color: $light-text-color2;
     font-family: 'Comfortaa';
     text-align: left;
     position: relative;
@@ -139,7 +139,7 @@
     top: 18px;
     right: -36px;
     // color: $accent;
-    color: #000;
+    color: $light-text-color2;
   }
   span.rt {
     vertical-align: top;
@@ -147,7 +147,7 @@
     top: 4px;
     right: -30px;
     // color: $accent;
-    color: #000;
+    color: $light-text-color2;
     font-size: large;
     opacity: 0.50;
   }
@@ -163,14 +163,14 @@
   label {
     display: inline-block;
     // color: $accent;
-    color: #000;
+    color: $light-text-color;;
     text-align: left;
 
     &.upper {
       font-size: small;
       font-weight: 300;
       // color: rgba($accent, 0.90);
-      color: #000;
+      color: $light-text-color;;
       display: inline;
       text-align: left;
       margin-right: 2px;
@@ -183,7 +183,7 @@
       font-weight: 300;
       font-size: 24px;
       // color: rgba($accent, 0.90);
-      color: #000;
+      color: $light-text-color;;
       text-align: left;
     }
   }
