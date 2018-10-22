@@ -1,0 +1,34 @@
+<div class="new-box-mode" [class.connection]="island.connection" [class.standalone]="island.standalone">
+  <label class="box-title">{{island.destination}} <label #status class="status" [attr.data-status]="island.status">{{island.status}}</label></label>
+  <ng-container *ngIf="island.connection">
+    <div class="mode" data-mode="train" *ngFor="let mode of island.modes; let  i = index;" [attr.data-mode]="mode.mode"
+      [class.mode-a]="i === 0" [class.mode-b]="i === 1">
+      <div class="places">
+        <div class="left">
+          <label class="left destination-name">{{mode.departureFrom}}</label>
+          <label class="left time">{{mode.departureTime | date: 'shortTime'}}</label>
+        </div>
+        <div class="mode-marker">
+          <div class="line nofill" [attr.data-color]="mode.mode"></div>
+          <div class="mode-type boat" *ngIf="mode.mode === 'boat'"></div>
+          <div class="mode-type plane" *ngIf="mode.mode === 'flight'"></div>
+          <div class="mode-type train" *ngIf="mode.mode === 'train'"></div>
+          <!-- <i class="material-icons mode-type" [attr.data-color]="mode.mode">{{mode.modeIcon}}</i> -->
+        </div>
+        <div class="right">
+          <label class="right destination-name">{{mode.arrivalAt}}</label>
+          <label class="right time">{{mode.arrivalTime | date: 'shortTime'}}</label>
+        </div>
+      </div>
+      <div class="mode-info">
+        <!-- <label class="status" [attr.data-status]="mode.status">{{mode.status}}</label> -->
+        <label class="departure-gate">{{mode.meta}}</label>
+      </div>
+    </div>
+  </ng-container>
+  <app-transport-bar-mode (statusChange)="onStatusChange($event)" [status]="island.status" *ngIf="island.standalone" [mode]="island.standaloneMode"></app-transport-bar-mode>
+  <div class="clearfix"></div>
+</div>
+<div class="next-departure-box">
+  <label>Next Departure at 19:00 PM</label>
+</div>

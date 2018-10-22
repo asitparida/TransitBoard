@@ -1,0 +1,30 @@
+<div class="mode standalone" [attr.data-mode]="mode.mode" >
+  <div class="places">
+    <div class="left">
+      <label class="left destination-name">{{mode.departureFrom}}</label>
+      <label class="left time">{{mode.departureTime | date: 'shortTime'}}</label>
+    </div>
+    <div class="mode-marker">
+      <ng-container *ngIf="mode.mode === 'flight'">
+          <div class="line nofill" data-color="boat" #line>
+            <div class="filled" #filled></div>
+            <div class="unfilled" #unfilled></div>
+          </div>
+          <div class="mode-type plane" *ngIf="mode.mode === 'flight'" #flight></div>
+      </ng-container>
+      <ng-container *ngIf="mode.mode !== 'flight'">
+          <div class="line nofill" data-color="boat"></div>
+          <div class="mode-type boat" *ngIf="mode.mode === 'boat'"></div>
+      <div class="mode-type train" *ngIf="mode.mode === 'train'"></div>
+      </ng-container>
+    </div>
+    <div class="right">
+      <label class="right destination-name">{{mode.arrivalAt}}</label>
+      <label class="right time">{{mode.arrivalTime | date: 'shortTime'}}</label>
+    </div>
+  </div>
+  <div class="mode-info">
+    <label class="airline-name">{{mode.id}}</label>
+    <label class="departure-gate">{{mode.meta}}</label>
+  </div>
+</div>

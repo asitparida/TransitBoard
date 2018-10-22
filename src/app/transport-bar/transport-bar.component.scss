@@ -45,27 +45,16 @@
     flex: 1;
     order: 1;
     padding: 0px 30px 0 30px;
-
-    // .status {
-    //   margin-left: auto;
-    //   height: 48px;
-    //   line-height: 48px;
-    //   background: transparent;
-    //   letter-spacing: 1px;
-    //   font-size: x-12px;
-    //   text-align: center;
-    //   position: relative;
-    //   margin-right: 25px;
-    // }
   }
 
   .box {
     padding: 0;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
 
     .box-title {
       padding: 10px 15px 5px 15px;
-      // margin-bottom: 10px;
       font-size: x-large;
       font-weight: 500;
       width: 100%;
@@ -74,21 +63,46 @@
       letter-spacing: 1px;
     }
   }
+  .next-departure-box {
+    position: absolute;
+    background-image: linear-gradient(to right, #263548, #263548);
+    z-index: 1;
+    bottom: 6px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 18px;
+    width: 100%;
+    padding: 0 10px;
+    color: #fff;
+    opacity: 0.50;
+    text-align: right;
+    font-weight: 100;
+    text-transform: uppercase;
+    transform-origin: bottom center;
+    transform: scale(0.95, 0.95);
+    font-size: 11px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.10);
+    label {
+      position: relative;
+      top: 2px;
+    }
+  }
 }
 
 .new-box-mode {
   width: 100%;
   float: left;
-  margin-bottom: 17px;
+  margin-bottom: 24px;
   background-image: linear-gradient(to right, #414c5e, #263548);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.10);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  position: relative;
+  z-index: 2;
 
   .status {
-    // width: 80px;
     text-align: right;
     height: 18px;
     line-height: 18px;
@@ -100,26 +114,21 @@
     font-weight: 300;
     margin-right: 0px;
     padding: 0 5px;
-    // opacity: 0.80;
     border-radius: 4px;
     top: 2px;
+
+    &.collapse {
+      animation: fade-out 0.25s ease-out forwards;
+    }
+    &.expand {
+      animation: fade-in 0.25s ease-out forwards;
+    }
 
     &[data-status="ONTIME"] {
       border-color: #27ae60;
       color: #27ae60;
       background: transparent;
       padding-right: 0;
-
-      // &:after {
-      //   width: 12px;
-      //   height: 12px;
-      //   border-radius: 50%;
-      //   position: absolute;
-      //   content: " ";
-      //   top: 4px;
-      //   right: -21px;
-      //   background: #27ae60;
-      // }
     }
 
     &[data-status="DELAYED"] {
@@ -127,18 +136,20 @@
       color: #fff;
       background: #e74c3c;
       opacity: 0.90;
-
-      // &:after {
-      //   width: 12px;
-      //   height: 12px;
-      //   border-radius: 50%;
-      //   position: absolute;
-      //   content: " ";
-      //   top: 4px;
-      //   right: -21px;
-      //   background: #e74c3c;
-      // }
     }
+    &[data-status="ARRIVED"] {
+      border-color: #27ae60;
+      color: #fff;
+      background: #27ae60;
+    }
+
+    &[data-status="BOARDING"] {
+      border-color: $bg;
+      color: #000;
+      background: $bg;
+      opacity: 0.90;
+    }
+  
   }
 
   &.connection {
@@ -164,68 +175,19 @@
     background: #fff;
     width: 100%;
     float: left;
-    padding: 0px 15px 10px 15px;
+    padding: 0px 15px 5px 15px;
     border-left-color: #fff;
     background: transparent;
-    // border-left: 2px solid transparent;
-
-    &[data-mode="boat"] {
-      // border-left-color: $boat;
-    }
-
-    &[data-mode="train"] {
-      // border-left-color: $train;
-    }
-
-    &[data-mode="flight"] {
-      // border-left-color: $flight;
-    }
-
-    &.standalone {
-      // background-image: linear-gradient(to right, #414c5e, #263548);
-    }
 
     &.mode-a {
       border-bottom-right-radius: 0px;
       border-top-right-radius: 0px;
-      // margin-right: 15px;
       position: relative;
-      // background-image: linear-gradient(to right, #414c5e, #334053);
-
-      // &:after {
-      //   position: absolute;
-      //   top: 43px;
-      //   right: 0;
-      //   width: 30px;
-      //   border-top: 1px solid rgba(0, 0, 0, 0.10);
-      //   content: "";
-      //   margin-right: -30px;
-      //   z-index: 1;
-      // }
-
-      // &:before {
-      //   content: "+";
-      //   width: 15px;
-      //   height: 15px;
-      //   border-radius: 50%;
-      //   color: $light_accent;
-      //   // background: #e0e0e0;
-      //   position: absolute;
-      //   margin-right: -10px;
-      //   top: 36px;
-      //   right: -13px;
-      //   line-height: 15px;
-      //   text-align: center;
-      //   z-index: 2;
-      // }
     }
 
     &.mode-b {
       border-bottom-left-radius: 0px;
       border-top-left-radius: 0px;
-      // margin-left: 15px;
-      // border-left: 1px dashed #000;
-      // background-image: linear-gradient(to right, #334053, #263548);
     }
 
     &.mode-b {
@@ -293,7 +255,31 @@
           top: 50%;
           left: 30%;
           z-index: 1;
-          border-top: 1px dashed transparent;
+
+          &.nofill {
+            border-top: 1px dashed transparent;
+            .unfilled,
+            .filled {
+              display: none;
+            }
+          }
+
+          .unfilled {
+            top: 0;
+            right: 0;
+            position: absolute;
+            width: 50%;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.10));
+            height: 1px;
+          }
+          .filled {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 50%;
+            background-image: linear-gradient(to right, #70e7d1, #10ad90);
+            height: 1px;
+          }
 
           &[data-color="flight"] {
             border-top-color: rgba($flight, 0.20);
@@ -317,7 +303,7 @@
           font-size: large;
           display: block;
           margin: 0 auto;
-          z-index: 1;
+          z-index: 3;
           position: relative;
           text-align: center;
 
@@ -398,10 +384,8 @@
       }
 
       .airline-name {
-        // width: calc(100% - 180px);
         width: 100%;
         text-align: center;
-        // text-transform: uppercase;
       }
 
       .departure-gate {
@@ -432,7 +416,13 @@
   mask-size: 22px;
   mask-repeat: no-repeat;
   background-color: $light_accent2;
-  mask-position: center;
+  mask-position: center 9px;
+
+  &.approaching {
+    transform: rotate(180deg);
+    transform-origin: center center;
+    background-color: #fff;
+  }
 }
 
 .train {
@@ -444,4 +434,27 @@
   mask-repeat: no-repeat;
   background-color: $light_accent2;
   mask-position: center 5px;
+}
+
+
+@keyframes fade-out {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
 }
