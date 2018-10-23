@@ -118,7 +118,7 @@
     top: 2px;
 
     &.collapse {
-      animation: fade-out 0.25s ease-out forwards;
+      animation: fade-out 0.25s ease-in forwards;
     }
     &.expand {
       animation: fade-in 0.25s ease-out forwards;
@@ -148,6 +148,14 @@
       color: #000;
       background: $bg;
       opacity: 0.90;
+    }
+
+    &[data-status="DEPARTED"] {
+      // border-color: $bg;
+      color: #70e7d1;
+      background: transparent;
+      opacity: 0.90;
+      padding-right: 0;
     }
   
   }
@@ -193,6 +201,23 @@
     &.mode-b {
       padding-left: 10px;
       border-right: 1px solid #1c2536;
+    }
+    &:not(.mode-a):not(.mode-b) {
+      .places .mode-marker {
+        top: 4px;
+      }
+    }
+
+    &.mode-a,
+    &.mode-b {
+      .places {
+        .mode-marker {
+          .line {
+            width: 30%;
+            left: 35%;
+          }
+        }
+      }
     }
 
     .destination-name {
@@ -250,10 +275,10 @@
 
         .line {
           position: absolute;
-          width: 40%;
+          width: 50%;
           height: 1px;
           top: 50%;
-          left: 30%;
+          left: 25%;
           z-index: 1;
 
           &.nofill {
@@ -269,7 +294,6 @@
             right: 0;
             position: absolute;
             width: 50%;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.10));
             height: 1px;
           }
           .filled {
@@ -277,8 +301,24 @@
             left: 0;
             position: absolute;
             width: 50%;
-            background-image: linear-gradient(to right, #70e7d1, #10ad90);
             height: 1px;
+          }
+
+          &.approaching {
+            .unfilled {
+              background-image: linear-gradient(to right, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.10));
+            }
+            .filled {
+              background-image: linear-gradient(to right, lighten(#e74c3c, 5), lighten(#e74c3c, 10));
+            }
+          }
+          &.departing {
+            .unfilled {
+              background-image: linear-gradient(to right, #70e7d1, #10ad90);
+            }
+            .filled {
+              background-image: linear-gradient(to right, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.10));
+            }
           }
 
           &[data-color="flight"] {
@@ -386,6 +426,8 @@
       .airline-name {
         width: 100%;
         text-align: center;
+        position: relative;
+        top: -8px;
       }
 
       .departure-gate {
@@ -406,6 +448,16 @@
   mask-repeat: no-repeat;
   background-color: $light_accent2;
   mask-position: center;
+  &.approaching {
+    transform: rotate(180deg);
+    transform-origin: center center;
+    background-color: #fff;
+  }
+  &.departing {
+    transform: rotate(0deg);
+    transform-origin: center center;
+    background-color: #fff;
+  }
 }
 
 .plane {
@@ -423,6 +475,11 @@
     transform-origin: center center;
     background-color: #fff;
   }
+  &.departing {
+    transform: rotate(0deg);
+    transform-origin: center center;
+    background-color: #fff;
+  }
 }
 
 .train {
@@ -434,6 +491,17 @@
   mask-repeat: no-repeat;
   background-color: $light_accent2;
   mask-position: center 5px;
+
+  &.approaching {
+    transform: rotate(180deg);
+    transform-origin: center center;
+    background-color: #fff;
+  }
+  &.departing {
+    transform: rotate(0deg);
+    transform-origin: center center;
+    background-color: #fff;
+  }
 }
 
 

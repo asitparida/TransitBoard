@@ -25,7 +25,7 @@ export class TransportBarComponent implements OnInit {
       connection: false,
       standalone: true,
       status: 'DELAYED',
-      standaloneMode: { mode: 'flight', modeIcon: 'airplanemode_active', status: 'DELAYED', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Orcas Harbour', arrivalTime: new Date(), meta: 'Gate 1', id: 'Spirit - SP101' }
+      standaloneMode: { mode: 'flight', modeIcon: 'airplanemode_active', position: 120, status: 'DELAYED', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Orcas Harbour', arrivalTime: new Date(), meta: 'Gate 1', id: 'Spirit - SP101' }
     },
     {
       destination: 'Stuart Island',
@@ -37,30 +37,31 @@ export class TransportBarComponent implements OnInit {
       ]
     },
     {
-      destination: 'Orcas Island',
+      destination: 'Lopez Island',
       connection: false,
       standalone: true,
-      status: 'ONTIME',
-      standaloneMode: { mode: 'flight', modeIcon: 'airplanemode_active', status: 'ONTIME', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Orcas Harbour', arrivalTime: new Date(), meta: 'Gate 1', id: 'Spirit - SP101' }
+      status: 'DEPARTED',
+      standaloneMode: { mode: 'flight', modeIcon: 'airplanemode_active', position: 50, status: 'DEPARTED', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Lopez Harbour', arrivalTime: new Date(), meta: 'Gate 1', id: 'Spirit - SP101' }
     },
     {
       destination: 'Friday Harbour',
       connection: false,
       standalone: true,
-      status: 'ONTIME',
-      standaloneMode: { mode: 'train', modeIcon: 'airplanemode_active', status: 'ONTIME', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Friday Harbour', arrivalTime: new Date(), meta: 'Platform 1' }
+      status: 'DEPARTED',
+      standaloneMode: { mode: 'train', modeIcon: 'airplanemode_active', position: 20, status: 'DEPARTED', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Friday Harbour', arrivalTime: new Date(), meta: 'Platform 1' }
     },
     {
       destination: 'Roche Harbour',
       connection: false,
       standalone: true,
       status: 'DELAYED',
-      standaloneMode: { mode: 'train', modeIcon: 'airplanemode_active', status: 'DELAYED', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Roche Harbour', arrivalTime: new Date(), meta: 'Platform 1' }
+      standaloneMode: { mode: 'train', modeIcon: 'airplanemode_active', position: 150, status: 'DELAYED', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Roche Harbour', arrivalTime: new Date(), meta: 'Platform 1' }
     },
   ];
   constructor() { }
 
   ngOnInit() {
+    this.islandOtions = this.islandOtions.sort((a, b) => a.destination.localeCompare(b.destination));
   }
 
 }

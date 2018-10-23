@@ -13,52 +13,114 @@ import {
 export class TransportBarModeComponent implements AfterViewInit {
 
   @Input() mode;
+  @Input() standalone = false;
   @Input() status;
   @Output() statusChange = new EventEmitter();
   @ViewChild('flight') flight: ElementRef;
+  @ViewChild('train') train: ElementRef;
+  @ViewChild('boat') boat: ElementRef;
   @ViewChild('line') line: ElementRef;
   @ViewChild('unfilled') unfilled: ElementRef;
   @ViewChild('filled') filled: ElementRef;
+  width50;
 
   constructor() { }
 
   ngAfterViewInit() {
-    if (this.mode.mode === 'flight') {
+    const line = (this.line.nativeElement as HTMLElement).getBoundingClientRect();
+    this.width50 = line.width / 2;
+    if (this.standalone) {
       if (this.mode.status === 'DELAYED') {
-        this.startAnimation();
+        this.startAnimationForApproaching();
+      }
+      if (this.mode.status === 'DEPARTED') {
+        this.startAnimationForDeparture();
       }
     }
   }
-  startAnimation() {
+  getModeTransport() {
+    if (this.mode.mode === 'flight') {
+      return this.flight.nativeElement;
+    }
+    if (this.mode.mode === 'train') {
+      return this.train.nativeElement;
+    }
+    if (this.mode.mode === 'boat') {
+      return this.boat.nativeElement;
+    }
+  }
+  startAnimationForApproaching() {
     const line = this.line.nativeElement;
     const filled = this.filled.nativeElement;
     const unfilled = this.unfilled.nativeElement;
-    const flight = this.flight.nativeElement;
+    const transport = this.getModeTransport();
     if (line) {
       (line as HTMLElement).classList.remove('nofill');
     }
-    const maxLeft = (filled as HTMLElement).getBoundingClientRect().width;
-    let currentPosition = 0;
-    const stepper = 0.025;
-    if (flight) {
-      (flight as HTMLElement).classList.add('approaching');
+    const width = this.width50;
+    const maxLeft = width;
+    let currentPosition = -(width * ((100 - (this.mode.position || 100)) / 100));
+    const stepper = 0.033;
+    if (transport) {
+      (transport as HTMLElement).classList.add('approaching');
+      (line as HTMLElement).classList.add('approaching');
       const movePlane =  () => {
         const widthInterval = setInterval(() => {
           currentPosition = currentPosition + stepper;
           const filledWidth = (((maxLeft - currentPosition) / maxLeft) * 50);
           const unfilledWidth = 100 - filledWidth;
-          (flight as HTMLElement).style.transform = `translateX(${-currentPosition}px) rotate(180deg)`;
+          (transport as HTMLElement).style.transform = `translateX(${-currentPosition}px) scaleX(-1)`;
           (filled as HTMLElement).style.width = `${filledWidth}%`;
           (unfilled as HTMLElement).style.width = `${unfilledWidth}%`;
           if (currentPosition > maxLeft) {
-            (flight as HTMLElement).style.transform = `translateX(${-currentPosition}px) rotate(0deg)`;
-            (flight as HTMLElement).classList.remove('approaching');
+            (transport as HTMLElement).style.transform = `translateX(${-currentPosition}px) scaleX(1)`;
+            (transport as HTMLElement).classList.remove('approaching');
             currentPosition = 0;
             clearInterval(widthInterval);
             this.changeState('ARRIVED');
             setTimeout(() => {
               this.changeState('BOARDING');
+              setTimeout(() => {
+                this.changeState('DEPARTED');
+                this.mode.position = 0;
+                this.startAnimationForDeparture();
+              }, 5000);
             }, 5000);
+          }
+        }, 10);
+      };
+      setTimeout(movePlane);
+    }
+  }
+  startAnimationForDeparture() {
+    const line = this.line.nativeElement;
+    const filled = this.filled.nativeElement;
+    const unfilled = this.unfilled.nativeElement;
+    const transport = this.getModeTransport();
+    if (line) {
+      (line as HTMLElement).classList.remove('nofill');
+    }
+    const width = this.width50;
+    const maxLeft = width;
+    let currentPosition = -(width * ((100 - (this.mode.position || 0)) / 100));
+    const stepper = 0.020;
+    if (transport) {
+      (transport as HTMLElement).classList.add('departing');
+      (line as HTMLElement).classList.add('departing');
+      const movePlane =  () => {
+        const widthInterval = setInterval(() => {
+          currentPosition = currentPosition + stepper;
+          const unfilledWidth = (((maxLeft - currentPosition) / maxLeft) * 50);
+          const filledWidth = 100 - unfilledWidth;
+          (transport as HTMLElement).style.transform = `translateX(${currentPosition}px)`;
+          (filled as HTMLElement).style.width = `${filledWidth}%`;
+          (unfilled as HTMLElement).style.width = `${unfilledWidth}%`;
+          if (currentPosition > maxLeft) {
+            (transport as HTMLElement).style.transform = `translateX(${currentPosition}px)`;
+            (transport as HTMLElement).classList.remove('departing');
+            currentPosition = 0;
+            clearInterval(widthInterval);
+            this.changeState('REACHED');
           }
         }, 10);
       };

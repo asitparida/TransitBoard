@@ -13,7 +13,6 @@
           <div class="mode-type boat" *ngIf="mode.mode === 'boat'"></div>
           <div class="mode-type plane" *ngIf="mode.mode === 'flight'"></div>
           <div class="mode-type train" *ngIf="mode.mode === 'train'"></div>
-          <!-- <i class="material-icons mode-type" [attr.data-color]="mode.mode">{{mode.modeIcon}}</i> -->
         </div>
         <div class="right">
           <label class="right destination-name">{{mode.arrivalAt}}</label>
@@ -21,12 +20,11 @@
         </div>
       </div>
       <div class="mode-info">
-        <!-- <label class="status" [attr.data-status]="mode.status">{{mode.status}}</label> -->
         <label class="departure-gate">{{mode.meta}}</label>
       </div>
     </div>
   </ng-container>
-  <app-transport-bar-mode (statusChange)="onStatusChange($event)" [status]="island.status" *ngIf="island.standalone" [mode]="island.standaloneMode"></app-transport-bar-mode>
+  <app-transport-bar-mode [standalone]="island.standalone" (statusChange)="onStatusChange($event)" [status]="island.status" *ngIf="island.standalone" [mode]="island.standaloneMode"></app-transport-bar-mode>
   <div class="clearfix"></div>
 </div>
 <div class="next-departure-box">

@@ -5,7 +5,7 @@
       <label class="left time">{{mode.departureTime | date: 'shortTime'}}</label>
     </div>
     <div class="mode-marker">
-      <ng-container *ngIf="mode.mode === 'flight'">
+      <!-- <ng-container *ngIf="mode.mode === 'flight'">
           <div class="line nofill" data-color="boat" #line>
             <div class="filled" #filled></div>
             <div class="unfilled" #unfilled></div>
@@ -16,7 +16,14 @@
           <div class="line nofill" data-color="boat"></div>
           <div class="mode-type boat" *ngIf="mode.mode === 'boat'"></div>
       <div class="mode-type train" *ngIf="mode.mode === 'train'"></div>
-      </ng-container>
+      </ng-container> -->
+      <div class="line nofill" data-color="boat" #line>
+          <div class="filled" #filled></div>
+          <div class="unfilled" #unfilled></div>
+        </div>
+        <div class="mode-type boat" *ngIf="mode.mode === 'boat'" #boat></div>
+        <div class="mode-type train" *ngIf="mode.mode === 'train'" #train></div>
+        <div class="mode-type plane" *ngIf="mode.mode === 'flight'" #flight></div>
     </div>
     <div class="right">
       <label class="right destination-name">{{mode.arrivalAt}}</label>
