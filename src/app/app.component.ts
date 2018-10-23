@@ -11,6 +11,10 @@ declare let turf: any;
 export class AppComponent implements AfterViewInit {
   title = 'san-juan';
   ngAfterViewInit() {
+    // this.addMap();
+  }
+
+  addMap() {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYXNpdHBhcmlkYSIsImEiOiJjajJhMzl6OHowMDEzMzJwaTVrdWphY2V4In0.vNu71gEwtnCUsEK671XM0w';
     mapboxgl.accessToken = 'pk.eyJ1IjoiYXNpdHBhcmlkYSIsImEiOiJjajJhMzl6OHowMDEzMzJwaTVrdWphY2V4In0.vNu71gEwtnCUsEK671XM0w';
     const map = new mapboxgl.Map({
