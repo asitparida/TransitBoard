@@ -10,26 +10,11 @@ export class TransportBarComponent implements OnInit {
 
   // tslint:disable max-line-length
   depTime = new Date();
-  harbourOptions = [
-    {
-      destination: 'Friday Harbour', items: [
-        { mode: 'train', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'ONTIME' },
-        { mode: 'train', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'DELAYED' },
-        { mode: 'train', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'ONTIME' }
-      ]
-    },
-    {
-      destination: 'Roche Harbour', items: [
-        { mode: 'train', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'ONTIME' },
-        { mode: 'train', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'ONTIME' },
-        { mode: 'train', depTime: new Date(), gate: 'A', id: 'AAXXX', status: 'ONTIME' }
-      ]
-    }];
   islandOtions = [
     {
       destination: 'Orcas Island',
       connection: true,
-      status: 'ONTIME',
+      status: 'DELAYED',
       modes: [
         { mode: 'train', status: 'DELAYED', modeIcon: 'train', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Roche Harbour', arrivalTime: new Date(), meta: 'Platform 1' },
         { mode: 'boat', status: 'ONTIME', modeIcon: 'directions_boat', departureFrom: 'Roche Harbour', departureTime: new Date(), arrivalAt: 'Orcas Harbour', arrivalTime: new Date(), meta: 'Dock A' },
@@ -69,7 +54,7 @@ export class TransportBarComponent implements OnInit {
       destination: 'Roche Harbour',
       connection: false,
       standalone: true,
-      status: 'ONTIME',
+      status: 'DELAYED',
       standaloneMode: { mode: 'train', modeIcon: 'airplanemode_active', status: 'DELAYED', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Roche Harbour', arrivalTime: new Date(), meta: 'Platform 1' }
     },
   ];
