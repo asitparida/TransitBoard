@@ -23,59 +23,63 @@
     display: block;
     font-weight: 300;
     font-size: 30px;
+    opacity: 0.80;
     // text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   }
 }
 
 .ptf-details {
   display: inline-block;
-  width: 300px;
+  width: calc(66% - 300px);
   padding: 0 30px;
   vertical-align: small;
-  margin-left: 70px;
+  margin-left: 100px;
   color: $light-text-color;
 
   i {
     height: 30px;
-    width: 36px;
+    width: 30px;
     line-height: 30px;
     text-align: center;
     box-sizing: border-box;
     border-radius: 50%;
     font-size: 18px;
     position: absolute;
+    background-color: #24354b;
+    z-index: 2;
+    top: 3px;
     // color: #000;
-    // text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.50);
 
     &[data-color="flight"] {
-      color: $light-text-color;
+      color: rgba(255, 255, 255, 0.5);
       // color: #000;
     }
 
     &[data-color="train"] {
-      color: $light-text-color;
+      color: rgba(255, 255, 255, 0.5);
       // color: #000;
     }
 
     &[data-color="boat"] {
-      color: $light-text-color;
+      color: rgba(255, 255, 255, 0.5);
       // color: #000;
-      
+
     }
 
     &.pos-abs-0 {
       left: -40px;
-      z-index: 1;
+      z-index: 4;
     }
 
     &.pos-abs-1 {
       left: -66px;
-      z-index: 2;
+      z-index: 3;
     }
 
     &.pos-abs-2 {
       left: -92px;
-      z-index: 3;
+      z-index: 2;
     }
   }
 
@@ -84,12 +88,29 @@
     display: block;
     font-size: medium;
     font-weight: 300;
-    height: 30px;
-    line-height: 30px;
+    height: 36px;
+    line-height: 36px;
     margin: 0;
     position: relative;
     margin-right: 100px;
     text-align: left;
+    z-index: 3;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: -15px;
+      height: 1px;
+      width: 116px;
+      border-top: 1px dashed #24354b;
+      -webkit-transform-origin: left center;
+      transform-origin: left center;
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+      z-index: 1;
+    }
+
     // text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.10);
   }
 
@@ -107,16 +128,35 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  // border: 2px solid $accent;
-  // background: lighten($accent, 5);
-  padding: 0 30px 15px 0px;
-  // box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+  padding: 15px 30px 15px 15px;
   justify-content: center;
+  align-items: center;
+  // background-image: linear-gradient(to bottom, #24354b, lighten(#24354b, 5));
+  border: 2px solid #24354b;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.10);
+  min-width: 33%;
+
+  .ptf-callout {
+    position: absolute;
+    top: -15px;
+    height: 36px;
+    padding: 10px 14px;
+    background: #24354b;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    border-radius: 10px;
+    text-transform: capitalize;
+    font-size: small;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);
+  }
 }
 
 .ptf-notify {
   // color: $accent;
-  color: $light-text-color2;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 80px;
   font-weight: 300;
   display: inline-block;
@@ -141,6 +181,7 @@
     // color: $accent;
     color: $light-text-color2;
   }
+
   span.rt {
     vertical-align: top;
     position: absolute;
@@ -159,18 +200,21 @@
   width: 100%;
   order: 2;
   padding-top: 15px;
+  text-align: center;
 
   label {
     display: inline-block;
     // color: $accent;
-    color: $light-text-color;;
+    color: $light-text-color;
+    ;
     text-align: left;
 
     &.upper {
       font-size: small;
       font-weight: 300;
       // color: rgba($accent, 0.90);
-      color: $light-text-color;;
+      color: $light-text-color;
+      ;
       display: inline;
       text-align: left;
       margin-right: 2px;
@@ -183,7 +227,8 @@
       font-weight: 300;
       font-size: 24px;
       // color: rgba($accent, 0.90);
-      color: $light-text-color;;
+      color: $light-text-color;
+      ;
       text-align: left;
     }
   }

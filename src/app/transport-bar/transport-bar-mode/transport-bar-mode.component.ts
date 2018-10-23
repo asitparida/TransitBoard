@@ -84,7 +84,7 @@ export class TransportBarModeComponent implements AfterViewInit {
                 this.changeState('DEPARTED');
                 this.mode.position = 0;
                 this.startAnimationForDeparture();
-              }, 5000);
+              }, 10000);
             }, 5000);
           }
         }, 10);
