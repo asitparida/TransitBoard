@@ -1,6 +1,6 @@
-<div class="new-box-mode" [class.connection]="island.connection" [class.standalone]="island.standalone">
-  <label class="box-title">{{island.destination}} <label #status class="status" [attr.data-status]="island.status">{{island.status}}</label></label>
-  <ng-container *ngIf="island.connection">
+<div class="new-box-mode option-box" [class.standalone]="island.standalone">
+  <label class="box-title"><label class="option-destination">{{island.destination}}</label> <label #status class="status option-status" [attr.data-status]="island.status">{{island.status}}</label></label>
+  <!-- <ng-container *ngIf="island.connection">
     <div class="mode" data-mode="train" *ngFor="let mode of island.modes; let  i = index;" [attr.data-mode]="mode.mode"
       [class.mode-a]="i === 0" [class.mode-b]="i === 1">
       <div class="places">
@@ -24,9 +24,8 @@
       </div>
     </div>
   </ng-container>
-  <app-transport-bar-mode [standalone]="island.standalone" (statusChange)="onStatusChange($event)" [status]="island.status" *ngIf="island.standalone" [mode]="island.standaloneMode"></app-transport-bar-mode>
+  <app-transport-bar-mode [standalone]="island.standalone" (statusChange)="onStatusChange($event)" [status]="island.status" *ngIf="island.standalone" [mode]="island.standaloneMode"></app-transport-bar-mode> -->
+  <app-transport-bar-new [island]="island"></app-transport-bar-new>
   <div class="clearfix"></div>
 </div>
-<div class="next-departure-box">
-  <label>Next Departure at 19:00 PM</label>
-</div>
+<!-- `11 -->

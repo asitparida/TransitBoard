@@ -13,25 +13,25 @@ export class TransportBarItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (this.island.id === 1) {
-      setTimeout(() => {
-        this.onStatusChange('ONTIME');
-        setTimeout(() => {
-          this.onStatusChange('BOARDING');
-          setTimeout(() => {
-            this.onStatusChange('DEPARTED');
-          }, 15000);
-        }, 10000);
-      }, 5000);
-    }
-    if (this.island.id === 3) {
-      setTimeout(() => {
-        this.onStatusChange('BOARDING');
-        setTimeout(() => {
-          this.onStatusChange('DEPARTED');
-        }, 10000);
-      }, 7500);
-    }
+    // if (this.island.id === 1) {
+    //   setTimeout(() => {
+    //     this.onStatusChange('ONTIME');
+    //     setTimeout(() => {
+    //       this.onStatusChange('BOARDING');
+    //       setTimeout(() => {
+    //         this.onStatusChange('DEPARTED');
+    //       }, 15000);
+    //     }, 10000);
+    //   }, 5000);
+    // }
+    // if (this.island.id === 3) {
+    //   setTimeout(() => {
+    //     this.onStatusChange('BOARDING');
+    //     setTimeout(() => {
+    //       this.onStatusChange('DEPARTED');
+    //     }, 10000);
+    //   }, 7500);
+    // }
   }
 
   onStatusChange(status) {

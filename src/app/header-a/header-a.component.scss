@@ -3,17 +3,20 @@
 :host {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   height: 100%;
   // background: #1c2536;
   padding: 30px 0 30px 30px;
 }
 
 .weather-time-box {
-  padding-left: 30px;
-  border-left: 1px solid rgba(255, 255, 255, 0.10);
+  padding-left: 0px;
   margin-left: auto;
-  color: $light-text-color;
+  color: rgba(255, 255, 255, 1);
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  opacity: 0.80;
 
   .weather {
     display: block;
@@ -167,7 +170,7 @@
   label {
     text-transform: lowercase;
     // color:$accent;
-    color: $light-text-color2;
+    color: rgba(255, 255, 255, 1);
     font-family: 'Comfortaa';
     text-align: left;
     position: relative;

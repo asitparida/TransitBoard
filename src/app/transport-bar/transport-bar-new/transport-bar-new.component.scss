@@ -1,0 +1,53 @@
+@import '../../../styles.scss';
+
+.mode {
+    &.option {
+        display: inline-block;
+        width: 25%;
+        float: left;
+        padding: 0px 5px 5px 15px;
+    }
+}
+.places {
+    opacity: 0.70;
+}
+
+.option-status {}
+
+.bar-separtor {
+    opacity: 0.33;
+    margin: 0 5px;
+}
+
+
+[data-status="ONTIME"] {
+    // border-color: darken(#27ae60, 5);
+    color: #27ae60;
+    // background: darken(#27ae60, 5);
+    // padding-right: 0;
+}
+
+[data-status="DELAYED"] {
+    // border-color: #e74c3c;
+    color: #e74c3c;
+    // background: #e74c3c;
+}
+
+[data-status="ARRIVED"] {
+    // border-color: #27ae60;
+    color: #27ae60;
+    // background: #27ae60;
+}
+
+[data-status="BOARDING"] {
+    // border-color: $bg;
+    color: $bg;
+    // background: $bg;
+}
+
+[data-status="DEPARTED"] {
+    // border-color: $bg;
+    color: #70e7d1;
+    background: transparent;
+    padding-right: 0;
+}

@@ -1,0 +1,16 @@
+.status {
+    &.option-status {
+        width: 25%;
+        text-align: left;
+        letter-spacing: 1px;
+    }
+}
+.option-destination {
+    padding: 0 5px 0 15px;
+    display: inline-block;
+    line-height: 42px;
+    font-size: xx-large;
+}
+.option-box {
+    padding: 10px 0;
+}

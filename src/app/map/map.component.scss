@@ -1,3 +1,11 @@
+:host {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .hidden {
     display: none !important;
 }
@@ -56,3 +64,205 @@
       stroke-dashoffset: 0;
     }
   }
+
+
+
+  .cls-1 {
+    fill: #202e42;
+}
+
+.cls-2 {
+    fill: darken(#6e6e6e, 15);
+    opacity: 0.62;
+}
+
+.cls-15,
+.cls-18,
+.cls-2,
+.cls-7 {
+    isolation: isolate;
+}
+
+.cls-3 {
+    fill: #505c6f;
+}
+
+.cls-4 {
+    fill: #505c6e;
+}
+
+.cls-5 {
+    fill: #223044;
+}
+
+.cls-10,
+.cls-11,
+.cls-14,
+.cls-6,
+.cls-9 {
+    fill: none;
+}
+
+.cls-7 {
+    font-size: 25.97px;
+}
+
+.cls-13,
+.cls-7 {
+    fill: #ebd513;
+}
+
+.cls-15,
+.cls-7 {
+    font-family: DINCondensed-Bold, DIN Condensed;
+}
+
+.cls-15,
+.cls-18,
+.cls-7 {
+    font-weight: 700;
+}
+
+.cls-8 {
+    letter-spacing: -0.05em;
+}
+
+.cls-9 {
+    stroke: #feff18;
+}
+
+.cls-10,
+.cls-11,
+.cls-14,
+.cls-9 {
+
+}
+
+.cls-10,
+.cls-11 {
+    stroke: #4fffff;
+}
+
+.cls-11 {
+}
+
+
+.cls-14 {
+    // stroke: #ff8200;
+}
+
+.cls-15 {
+    font-size: 20px;
+}
+
+.cls-16 {
+    letter-spacing: -0.01em;
+}
+
+.cls-17 {
+    letter-spacing: -0.01em;
+}
+
+.cls-18 {
+    font-size: 14px;
+    font-family: DINAlternate-Bold, DIN Alternate;
+}
+
+.cls-19 {
+    letter-spacing: -0.02em;
+}
+
+.cls-20 {
+    letter-spacing: -0.01em;
+}
+
+.cls-21 {
+    letter-spacing: -0.09em;
+}
+
+[data-mode="ferry"] {
+    stroke-dasharray: 7.17 7.17;
+    &.highlight {
+        stroke: #4fffff !important;
+        opacity: 0.6;
+        animation: dash 10s linear alternate infinite;
+    }
+    &.normal {
+        stroke: #4fffff !important;
+        opacity: 0.3;
+        animation: dash 25s linear alternate infinite;
+    }
+}
+[data-mode="train"] {
+    stroke-dasharray: 5 1;
+    &.highlight {
+        stroke: #4fffff !important;
+        opacity: 0.8;
+        animation: dash 10s linear alternate infinite;
+    }
+    &.normal {
+        stroke: #4fffff !important;
+        opacity: 0.3;
+        animation: dash 25s linear alternate infinite;
+    }
+}
+[data-mode="flight"] {
+    stroke-dasharray: 50 5;
+    &.highlight {
+        stroke: #4fffff !important;
+        opacity: 1;
+        animation: dash 10s linear alternate infinite;
+    }
+    &.normal {
+        stroke: #4fffff !important;
+        opacity: 0.3;
+        animation: dash 25s linear alternate infinite;
+    }
+}
+
+[data-mode="ferry"],
+[data-mode="train"],
+[data-mode="flight"] {
+    &.reset {
+        stroke: #fff;
+        opacity: 0.50;
+    }
+}
+
+[data-point] {
+    &.reset {
+        stroke: #fff;
+        opacity: 0.10;
+    }
+    &.highlight {
+        opacity: 0.80;
+    }
+    &.normal {
+        stroke:  #4fffff;
+        opacity: 0.50;
+    }
+}
+[data-island] {
+    &.highlight {
+        fill:#95a5a6;
+    }
+}
+[data-island-label] {
+    &.cls-12,
+    &.cls-15,
+    &.cls-18 {
+        &.reset {
+            fill: #fff;
+            opacity: 0.33;
+        }
+        &.highlight {
+            fill: #fff;
+            opacity: 1;
+        }
+        &.normal {
+            fill: #fff;
+            opacity: 0.50;
+        }
+    }
+
+}

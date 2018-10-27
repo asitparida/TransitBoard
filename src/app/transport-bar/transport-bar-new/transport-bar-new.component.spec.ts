@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MapComponent } from './map.component';
+import { TransportBarNewComponent } from './transport-bar-new.component';
 
-describe('MapComponent', () => {
-  let component: MapComponent;
-  let fixture: ComponentFixture<MapComponent>;
+describe('TransportBarNewComponent', () => {
+  let component: TransportBarNewComponent;
+  let fixture: ComponentFixture<TransportBarNewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapComponent ]
+      declarations: [ TransportBarNewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MapComponent);
+    fixture = TestBed.createComponent(TransportBarNewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -18,7 +18,6 @@
     order: 2;
     margin-right: -30px;
     padding-top: 15px;
-    padding: 0 30px 0 30px;
 
     .box {
       float: left;
@@ -44,17 +43,21 @@
   .box-lower {
     flex: 1;
     order: 1;
-    padding: 0px 30px 0 30px;
+    padding: 30px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    opacity: 0.80;
   }
 
   .box {
     padding: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     position: relative;
     z-index: 2;
 
     .box-title {
-      padding: 10px 15px 5px 15px;
+      padding: 0 0 5px 0;
       font-size: x-large;
       font-weight: 500;
       width: 100%;
@@ -92,7 +95,7 @@
 .new-box-mode {
   width: 100%;
   float: left;
-  margin-bottom: 24px;
+  margin-bottom: 0;
   background-image: linear-gradient(to right, #24354b, #263548);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.20);
   border-top-left-radius: 10px;
@@ -104,18 +107,18 @@
 
   .status {
     text-align: right;
-    height: 18px;
-    line-height: 18px;
+    line-height: 42px;
     background: transparent;
     letter-spacing: 2px;
-    font-size: 12px;
+    font-size: medium;
     position: relative;
     float: right;
-    font-weight: 300;
+    font-weight: 500;
     margin-right: 0px;
-    padding: 0 5px;
+    padding: 0 0 0 15px;
     border-radius: 4px;
-    top: 2px;
+    top: 4px;
+    opacity: 0.80;
 
     &.collapse {
       animation: fade-out 0.5s ease-in forwards;
@@ -125,36 +128,33 @@
     }
 
     &[data-status="ONTIME"] {
-      border-color: darken(#27ae60, 5);
-      color: #fff;
-      background: darken(#27ae60, 5);
+      // border-color: darken(#27ae60, 5);
+      color: #27ae60;
+      // background: darken(#27ae60, 5);
       // padding-right: 0;
     }
 
     &[data-status="DELAYED"] {
-      border-color: #e74c3c;
-      color: #fff;
-      background: #e74c3c;
-      opacity: 0.90;
+      // border-color: #e74c3c;
+      color: #e74c3c;
+      // background: #e74c3c;
     }
     &[data-status="ARRIVED"] {
-      border-color: #27ae60;
-      color: #fff;
-      background: #27ae60;
+      // border-color: #27ae60;
+      color: #27ae60;
+      // background: #27ae60;
     }
 
     &[data-status="BOARDING"] {
-      border-color: $bg;
-      color: #000;
-      background: $bg;
-      opacity: 0.90;
+      // border-color: $bg;
+      color:$bg;
+      // background: $bg;
     }
 
     &[data-status="DEPARTED"] {
       // border-color: $bg;
       color: #70e7d1;
-      background: transparent;
-      opacity: 0.90;
+      background: -transparent;
       padding-right: 0;
     }
   
