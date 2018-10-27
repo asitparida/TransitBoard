@@ -27,16 +27,16 @@ export class TransportBarModeComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit() {
-    const line = (this.line.nativeElement as HTMLElement).getBoundingClientRect();
-    this.width50 = line.width / 2;
-    if (this.standalone) {
-      if (this.mode.status === 'DELAYED') {
-        this.startAnimationForApproaching();
-      }
-      if (this.mode.status === 'DEPARTED') {
-        this.startAnimationForDeparture();
-      }
-    }
+    // const line = (this.line.nativeElement as HTMLElement).getBoundingClientRect();
+    // this.width50 = line.width / 2;
+    // if (this.standalone) {
+    //   if (this.mode.status === 'DELAYED') {
+    //     this.startAnimationForApproaching();
+    //   }
+    //   if (this.mode.status === 'DEPARTED') {
+    //     this.startAnimationForDeparture();
+    //   }
+    // }
   }
   getModeTransport() {
     if (this.mode.mode === 'flight') {

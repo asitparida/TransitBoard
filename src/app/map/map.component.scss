@@ -1,0 +1,58 @@
+.hidden {
+    display: none !important;
+}
+
+.flight-paths {
+    stroke-dasharray: 5 5;
+    stroke-dashoffset: 1;
+}
+.train-paths {
+    stroke-dasharray: 10, 2;
+    stroke-dashoffset: 1;
+}
+.ferry-paths {
+    stroke-dasharray: 2 2;
+    stroke-dashoffset: 1;
+}
+
+.flight-paths,
+.train-paths,
+.ferry-paths {
+    path {
+        stroke:'#fff';
+        opacity: 0.33;
+        &.animate {
+            opacity: 1;
+            stroke:'#fff';
+            animation: dash 10s linear alternate infinite;
+            animation-delay: 0s;
+        }
+    }
+    path.reverse {
+        stroke:'#fff';
+        opacity: 0.33;
+        &.animate {
+            opacity: 1;
+            animation: reverse-dash 10s linear alternate infinite;
+            animation-delay: 0s;
+        }
+    }
+  }
+  
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 100;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes reverse-dash {
+    from {
+      stroke-dashoffset: -100;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }

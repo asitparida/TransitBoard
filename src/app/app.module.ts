@@ -6,6 +6,7 @@ import { HeaderAComponent } from './header-a/header-a.component';
 import { TransportBarComponent } from './transport-bar/transport-bar.component';
 import { TransportBarModeComponent } from './transport-bar/transport-bar-mode/transport-bar-mode.component';
 import { TransportBarItemComponent } from './transport-bar/transport-bar-item/transport-bar-item.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TransportBarItemComponent } from './transport-bar/transport-bar-item/tr
     HeaderAComponent,
     TransportBarComponent,
     TransportBarModeComponent,
-    TransportBarItemComponent
+    TransportBarItemComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule

@@ -15,7 +15,6 @@ export class HeaderAComponent implements OnInit {
   ngOnInit() {
     setInterval(() => {
       this.time = new Date(this.time.getTime() + 1 * 60000);
-      console.log(this.time);
     }, 2000);
   }
 
