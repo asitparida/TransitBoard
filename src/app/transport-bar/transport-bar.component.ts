@@ -111,9 +111,6 @@ export class TransportBarComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-    // setTimeout(() => {
-    //   // this.appService.highlightIsland('ORCAS');
-    // }, 2000);
     this.keySubscription = fromEvent(document, 'keyup').subscribe(e => {
       if ((e as KeyboardEvent).key === 'ArrowUp') {
         if (this.currentIndex === null) {
@@ -124,7 +121,7 @@ export class TransportBarComponent implements OnInit {
           this.currentIndex = this.islandOtions.length - 1;
         }
         this.activateIsland(this.islandOtions[this.currentIndex].id);
-        // this.debouncedReset();
+        this.debouncedReset();
       } else if ((e as KeyboardEvent).key === 'ArrowDown') {
         if (this.currentIndex === null) {
           this.currentIndex = -1;
@@ -134,12 +131,13 @@ export class TransportBarComponent implements OnInit {
           this.currentIndex = 0;
         }
         this.activateIsland(this.islandOtions[this.currentIndex].id);
-        // this.debouncedReset();
+        this.debouncedReset();
       }
     });
   }
 
   reset() {
+    this.currentIndex = null;
     this.appService.highlightIsland(null);
   }
 
