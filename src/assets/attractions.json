@@ -1,0 +1,35 @@
+
+{
+    "data": [
+        {
+            "name" : "ORCAS",
+            "attracations" : [
+                {
+                    "name" : "kayaking",
+                    "description": "Lipsum text",
+                    "icon": "whale.png"
+                },
+                {
+                    "name" : "whale watching",
+                    "description": "Lipsum text",
+                    "icon": "whale.png"
+                },
+                {
+                    "name" : "hiking",
+                    "description": "Lipsum text",
+                    "icon": "whale.png"
+                },
+                {
+                    "name" : "cycling",
+                    "description": "Lipsum text",
+                    "icon": "whale.png"
+                },
+                {
+                    "name" : "golfing",
+                    "description": "Lipsum text",
+                    "icon": "whale.png"
+                }
+            ] 
+        }
+    ]
+}
