@@ -8,6 +8,8 @@ import { TransportBarModeComponent } from './transport-bar/transport-bar-mode/tr
 import { TransportBarItemComponent } from './transport-bar/transport-bar-item/transport-bar-item.component';
 import { MapComponent } from './map/map.component';
 import { TransportBarNewComponent } from './transport-bar/transport-bar-new/transport-bar-new.component';
+import { AppService } from './app.service';
+import { TransportBarDetailedComponent } from './transport-bar/transport-bar-detailed/transport-bar-detailed.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,13 @@ import { TransportBarNewComponent } from './transport-bar/transport-bar-new/tran
     TransportBarModeComponent,
     TransportBarItemComponent,
     MapComponent,
-    TransportBarNewComponent
+    TransportBarNewComponent,
+    TransportBarDetailedComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ AppService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -46,8 +46,7 @@
     padding: 30px;
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
-    opacity: 0.80;
+    justify-content: center;
   }
 
   .box {
@@ -55,6 +54,9 @@
     margin-bottom: 0;
     position: relative;
     z-index: 2;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
 
     .box-title {
       padding: 0 0 5px 0;
@@ -104,6 +106,7 @@
   border-bottom-right-radius: 10px;
   position: relative;
   z-index: 2;
+  transition: background-image 0.5s ease-out 0s;
 
   .status {
     text-align: right;
@@ -128,27 +131,30 @@
     }
 
     &[data-status="ONTIME"] {
-      // border-color: darken(#27ae60, 5);
       color: #27ae60;
-      // background: darken(#27ae60, 5);
-      // padding-right: 0;
+      &.muted {
+        color: rgba(255, 255, 255, 0.5);
+      }
     }
 
     &[data-status="DELAYED"] {
-      // border-color: #e74c3c;
       color: #e74c3c;
-      // background: #e74c3c;
+      &.muted {
+        color: rgba(255, 255, 255, 0.5);
+      }
     }
     &[data-status="ARRIVED"] {
-      // border-color: #27ae60;
       color: #27ae60;
-      // background: #27ae60;
+      &.muted {
+        color: rgba(255, 255, 255, 0.5);
+      }
     }
 
     &[data-status="BOARDING"] {
-      // border-color: $bg;
       color:$bg;
-      // background: $bg;
+      &.muted {
+        color: rgba(255, 255, 255, 0.5);
+      }
     }
 
     &[data-status="DEPARTED"] {
@@ -337,9 +343,9 @@
         }
 
         .mode-type {
-          width: 36px;
-          height: 36px;
-          line-height: 36px;
+          width: 48px;
+          height: 48px;
+          line-height: 48px;
           font-size: large;
           display: block;
           margin: 0 auto;

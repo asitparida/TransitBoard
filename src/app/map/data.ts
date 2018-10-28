@@ -30,7 +30,7 @@ export const LopezMap = {
       '[data-point="orcas-airport"]'
     ],
     island: '[data-island="orcas-island"]',
-    islandLabel: '[data-island-label="lopez"]'
+    islandLabel: '[data-island-label="orcas"]'
   };
 
   export const StuartMap = {
@@ -48,7 +48,7 @@ export const LopezMap = {
       '[data-point="yacht-haven"]',
     ],
     island: '[data-island="stuart-island"]',
-    islandLabel: '[data-island-label="lopez"]'
+    islandLabel: '[data-island-label="stuart"]'
   };
 
   export const ShawMap = {
@@ -64,7 +64,7 @@ export const LopezMap = {
       '[data-point="shaw-harbour"]'
     ],
     island: '[data-island="shaw-island"]',
-    islandLabel: '[data-island-label="lopez"]'
+    islandLabel: '[data-island-label="shaw"]'
   };
 
   export const FridayMap = {
@@ -76,7 +76,10 @@ export const LopezMap = {
       '[data-mode="flight"][data-to="friday-harbour"]'
     ],
     points: [
-      '[data-point="friday-harbour"]'
+      '[data-point="friday-harbour"]',
+      '[data-point="lopez-harbour"]',
+      '[data-point="orcas-harbour"]',
+      '[data-point="shaw-harbour"]'
     ]
   };
 
@@ -90,5 +93,7 @@ export const LopezMap = {
     ],
     points: [
       '[data-point="roche-harbour"]',
+      '[data-point="stuart-harbour"]',
+      '[data-point="orcas-harbour"]'
     ]
   };

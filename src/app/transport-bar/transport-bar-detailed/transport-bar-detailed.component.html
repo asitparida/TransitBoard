@@ -1,0 +1,63 @@
+<div class="mode-details-wrapper">
+  <div class="mode-item-wrapper">
+    <div class="mode option blocked" *ngFor="let option of island.options; let  i = index;">
+      <div class="mode-details">
+        <div class="dep-time-wrapper">{{option.time | date: 'shortTime'}}</div>
+        <div class="mode-icon-wrapper">
+          <div class="mode-type train" *ngIf="option?.mode === 'train'"></div>
+          <div class="mode-type plane" *ngIf="option?.mode === 'flight'"></div>
+        </div>
+        <div class="dep-gate">
+          <label class="key"><span *ngIf="option?.mode === 'flight'">GATE</span><span *ngIf="option?.mode === 'train'">PLATFORM</span></label>
+          <label class="value">{{option.gate}}</label>
+        </div>
+        <div class="dep-connecting" *ngIf="option?.mode === 'train'">
+          <label class="key">Connecting</label>
+          <label class="value">Roche Harbour</label>
+        </div>
+        <div class="dep-connecting" *ngIf="option?.mode === 'flight'">
+          <label class="key">AIRLINE</label>
+          <label class="value">{{option.code}}</label>
+        </div>
+        <div class="dep-status">
+          <label class="key">STATUS</label>
+          <label class="value">{{option.status}}</label>
+        </div>
+      </div>
+      <!-- <div class="place-mode">
+            <label class="left time"><span *ngIf="option?.status === 'BOARDING'" [attr.data-status]="option.status">{{option.time
+                | date: 'shortTime'}}</span><span *ngIf="option?.status !== 'BOARDING'">{{option.time | date: 'shortTime'}}</span></label>
+            <label class="left destination-name" *ngIf="option?.mode === 'train'">{{option.gate}}<span *ngIf="option?.status !== 'BOARDING'"
+                class="option-status" [attr.data-status]="option.status"><span class="bar-separtor">|</span> {{option.status}}</span></label>
+            <label class="left destination-name" *ngIf="option?.mode === 'flight'">{{option?.code}}<span *ngIf="option?.status === 'BOARDING'"><span
+                  class="bar-separtor">|</span>{{option.gate}}</span><span [attr.data-status]="option.status" class="option-status"
+                *ngIf="option?.status !== 'BOARDING'"><span class="bar-separtor">|</span>{{option.status}}</span></label>
+          </div> -->
+    </div>
+  </div>
+  <div class="mode-place-details">
+    <div class="activity-item-wrapper">
+      <div class="activity-item">
+        <div class="icon-wrapper">
+          <div class="whaling"></div>
+        </div>
+        <label>Whale Watching</label>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="activity-item">
+        <div class="icon-wrapper">
+          <div class="kayaking"></div>
+        </div>
+        <label>Kayaking</label>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="activity-item">
+        <div class="icon-wrapper">
+          <div class="golfing"></div>
+        </div>
+        <label>Golf</label>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+  </div>
+</div>

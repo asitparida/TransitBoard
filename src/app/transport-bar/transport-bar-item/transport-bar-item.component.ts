@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, ViewChild, ElementRef } from '@angular/core';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-transport-bar-item',
@@ -9,10 +10,27 @@ import { Component, OnInit, ViewEncapsulation, Input, ViewChild, ElementRef } fr
 export class TransportBarItemComponent implements OnInit {
 
   @Input() island;
+  highlighted = false;
+  somethingHighlighted = false;
   @ViewChild('status') status: ElementRef;
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+
+    this.appService.islandHighlighted$.subscribe(data => {
+      if (data) {
+        this.somethingHighlighted = this.island.id !== data;
+        if (this.island.id === data) {
+          this.highlighted = true;
+        } else {
+          this.highlighted = false;
+        }
+      } else {
+        this.highlighted = false;
+        this.somethingHighlighted = false;
+      }
+    });
+
     // if (this.island.id === 1) {
     //   setTimeout(() => {
     //     this.onStatusChange('ONTIME');

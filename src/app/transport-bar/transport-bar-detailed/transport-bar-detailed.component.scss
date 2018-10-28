@@ -1,0 +1,178 @@
+.mode {
+    &.option.blocked {
+        display: block;
+        width: 100%;
+        float: left;
+        padding: 2px 0 0 0;
+
+        .mode-details {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+
+            .dep-time-wrapper {
+                width: 100px;
+                font-size: large;
+                color: rgba(255, 255, 255, 0.80);
+            }
+
+            .mode-icon-wrapper {
+                width: 60px;
+                display: flex;
+                justify-content: center;
+
+                .mode-type {
+                    position: relative;
+                    left: -10px;
+
+                    &.train {
+                        mask-size: 28px;
+                        background-color: rgba(255, 255, 255, 0.80);
+                    }
+
+                    &.plane {
+                        background-color: rgba(255, 255, 255, 0.80);
+                    }
+                }
+            }
+
+            .dep-gate {
+                width: 75px;
+                min-width: 75px;
+                display: flex;
+                flex-flow: column;
+            }
+
+            .dep-connecting {
+                width: 170px;
+                display: flex;
+                flex-flow: column;
+            }
+
+            .dep-status {
+                width: 100px;
+                display: flex;
+                flex-flow: column;
+            }
+
+            .key {
+                width: 100%;
+                font-size: xx-small;
+                color: rgba(255, 255, 255, 0.50);
+                text-transform: uppercase;
+            }
+
+            .value {
+                width: 100%;
+                color: rgba(255, 255, 255, 0.80);
+                font-size: small;
+            }
+
+            label {
+                width: 100%;
+                display: block;
+            }
+        }
+
+    }
+}
+
+.mode-details-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .mode-item-wrapper {
+        height: 100%;
+        width: 100%;
+        flex: 1;
+        order: 1;
+    }
+    .mode-place-details {
+        flex: initial;
+        order: 2;
+        height: 230px;
+        overflow: hidden;
+        border-top: 1px dashed rgba(255, 255, 255, 0.50);
+        display: flex;
+        justify-content: center;
+        padding-top: 5px;
+    }
+}
+.activity-item-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
+.activity-item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-flow: column;
+    min-width: 33%;
+    max-width: 33%;
+    padding: 0 5px;
+    .icon-wrapper {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.10);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .whaling {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/whale.png);
+            mask-size: 48px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+            position: relative;
+            top: 4px;
+        }
+        .golfing {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/golf.png);
+            mask-size: 30px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+        }
+        .kayaking {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/kayaking.png);
+            mask-size: 48px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+        }
+        .cycling {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/cycling.png);
+            mask-size: 48px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+        }
+        .hiking {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/hiking.png);
+            mask-size: 42px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+        }
+    }
+    label {
+        color: rgba(255, 255, 255, 1);
+        line-height: 36px;
+    }
+    p {
+        font-size: xx-small;
+        color: rgba(255, 255, 255, 0.80);
+        text-align: justify;
+    }
+}

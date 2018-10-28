@@ -5,12 +5,55 @@
         letter-spacing: 1px;
     }
 }
+
 .option-destination {
     padding: 0 5px 0 15px;
     display: inline-block;
     line-height: 42px;
     font-size: xx-large;
 }
+
 .option-box {
     padding: 10px 0;
+    opacity: 0.80;
+}
+
+.app-detailed-view {
+    padding: 5px 15px 10px 15px;
+    max-height: 500px;
+    width: 100%;
+
+    .container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        height: 100%;
+        border-top: 1px dashed rgba(255, 255, 255, 0.50);
+    }
+}
+
+.diminish {
+    padding: 5px 0 8px;
+
+    .box-title {
+        padding-bottom: 0px !important;
+
+        .option-destination {
+            font-size: medium;
+        }
+
+        .option-destination,
+        .option-status {
+            line-height: 30px !important;
+        }
+    }
+}
+
+.highlighted {
+    opacity: 0.80;
+    background: linear-gradient(to right, rgba(#2980b9, 1), rgba(darken(#2980b9, 10), 1));
+
+    .box-title {
+        color: rgba(255, 255, 255, 1) !important;
+    }
 }

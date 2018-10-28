@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { AppService } from './app.service';
 declare let mapboxgl: any;
 declare let turf: any;
 // tslint:disable max-line-length
@@ -10,6 +11,7 @@ declare let turf: any;
 })
 export class AppComponent implements AfterViewInit {
   title = 'san-juan';
+  constructor(private appService: AppService) {}
   ngAfterViewInit() {
     // this.addMap();
   }

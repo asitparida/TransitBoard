@@ -1,6 +1,6 @@
 <div class="box-wrapper">
   <div class="box-lower">
-    <div class="box" *ngFor="let island of islandOtions">
+    <div class="box" *ngFor="let island of islandOtions" (click)="activateIsland(island.id)">
       <app-transport-bar-item [island]="island"></app-transport-bar-item>
       <div class="clearfix"></div>
     </div>

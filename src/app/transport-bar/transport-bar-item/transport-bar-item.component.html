@@ -1,5 +1,6 @@
-<div class="new-box-mode option-box" [class.standalone]="island.standalone">
-  <label class="box-title"><label class="option-destination">{{island.destination}}</label> <label #status class="status option-status" [attr.data-status]="island.status">{{island.status}}</label></label>
+<div class="new-box-mode option-box" [class.standalone]="island.standalone" [class.diminish]="somethingHighlighted" [class.highlighted]="highlighted">
+  <label class="box-title"><label class="option-destination">{{island.destination}}</label> <label *ngIf="!highlighted" [class.muted]="somethingHighlighted" #status class="status option-status" [attr.data-status]="island.status">{{island.status}}</label></label>
+  <div class="clearfix"></div>
   <!-- <ng-container *ngIf="island.connection">
     <div class="mode" data-mode="train" *ngFor="let mode of island.modes; let  i = index;" [attr.data-mode]="mode.mode"
       [class.mode-a]="i === 0" [class.mode-b]="i === 1">
@@ -25,7 +26,11 @@
     </div>
   </ng-container>
   <app-transport-bar-mode [standalone]="island.standalone" (statusChange)="onStatusChange($event)" [status]="island.status" *ngIf="island.standalone" [mode]="island.standaloneMode"></app-transport-bar-mode> -->
-  <app-transport-bar-new [island]="island"></app-transport-bar-new>
+  <app-transport-bar-new [hidden]="somethingHighlighted || highlighted" [island]="island"></app-transport-bar-new>
+  <div class="app-detailed-view" [hidden]="!highlighted">
+    <div class="container">
+        <app-transport-bar-detailed *ngIf="highlighted" [island]="island"></app-transport-bar-detailed>
+    </div>
+  </div>
   <div class="clearfix"></div>
 </div>
-<!-- `11 -->
