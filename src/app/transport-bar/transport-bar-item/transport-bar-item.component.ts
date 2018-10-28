@@ -11,12 +11,15 @@ export class TransportBarItemComponent implements OnInit {
 
   @Input() island;
   highlighted = false;
+  direction = '';
   somethingHighlighted = false;
   @ViewChild('status') status: ElementRef;
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-
+    this.appService.direction$.subscribe((dir) => {
+      this.direction = dir;
+    });
     this.appService.islandHighlighted$.subscribe(data => {
       if (data) {
         this.somethingHighlighted = this.island.id !== data;
@@ -30,26 +33,6 @@ export class TransportBarItemComponent implements OnInit {
         this.somethingHighlighted = false;
       }
     });
-
-    // if (this.island.id === 1) {
-    //   setTimeout(() => {
-    //     this.onStatusChange('ONTIME');
-    //     setTimeout(() => {
-    //       this.onStatusChange('BOARDING');
-    //       setTimeout(() => {
-    //         this.onStatusChange('DEPARTED');
-    //       }, 15000);
-    //     }, 10000);
-    //   }, 5000);
-    // }
-    // if (this.island.id === 3) {
-    //   setTimeout(() => {
-    //     this.onStatusChange('BOARDING');
-    //     setTimeout(() => {
-    //       this.onStatusChange('DEPARTED');
-    //     }, 10000);
-    //   }, 7500);
-    // }
   }
 
   onStatusChange(status) {

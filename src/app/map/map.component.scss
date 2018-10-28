@@ -7,7 +7,14 @@
 }
 
 .hidden {
-    display: none !important;
+    &:not(.legend) {
+        display: none !important;
+    }
+    &.legend {
+        &.mute {
+            opacity: 0 !important;
+        }
+    }
 }
 
 .flight-paths {
@@ -187,11 +194,17 @@
         stroke: #4fffff !important;
         opacity: 0.6;
         animation: dash 10s linear alternate infinite;
+        &.reverse {
+            animation: reverse-dash 10s linear alternate infinite;
+        }
     }
     &.normal {
         stroke: #4fffff !important;
         opacity: 0.3;
         animation: dash 25s linear alternate infinite;
+        &.reverse {
+            animation: reverse-dash 10s linear alternate infinite;
+        }
     }
 }
 [data-mode="train"] {
@@ -201,11 +214,17 @@
         stroke: #4fffff !important;
         opacity: 0.8;
         animation: dash 10s linear alternate infinite;
+        &.reverse {
+            animation: reverse-dash 10s linear alternate infinite;
+        }
     }
     &.normal {
         stroke: #4fffff !important;
         opacity: 0.3;
         animation: dash 25s linear alternate infinite;
+        &.reverse {
+            animation: reverse-dash 10s linear alternate infinite;
+        }
     }
 }
 [data-mode="flight"] {
@@ -215,11 +234,17 @@
         stroke: #4fffff !important;
         opacity: 1;
         animation: dash 10s linear alternate infinite;
+        &.reverse {
+            animation: reverse-dash 10s linear alternate infinite;
+        }
     }
     &.normal {
         stroke: #4fffff !important;
         opacity: 0.3;
         animation: dash 25s linear alternate infinite;
+        &.reverse {
+            animation: reverse-dash 10s linear alternate infinite;
+        }
     }
 }
 
@@ -229,6 +254,9 @@
     &.reset {
         stroke: #fff;
         opacity: 0.50;
+    }
+    &.legend {
+        animation: dash 25s linear alternate infinite;
     }
 }
 
@@ -272,4 +300,45 @@
         }
     }
 
+}
+
+.legend {
+    position: fixed;
+    top: 15px;
+    width: calc(100vw - 600px);
+    height: 60px;
+    left: 0px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    .legend-item {
+        max-width: 200px;
+        margin-right: 30px;
+        position: relative;
+        .svg-wrapper {
+            height: 1px;
+            width: 150px;
+            float: left;
+            display: block;
+            svg {
+                line {
+                    stroke: #fff;
+                    &.mute {
+                        opacity: 0.10;
+                    }
+                }
+            }
+        }
+        .mode-type {
+            position: absolute;
+            left: 50px;
+            top: -5px;
+            &.plane {                
+                top: -3px;
+            }
+            &.mute {
+                opacity: 0.10;
+            }
+        }
+    }
 }

@@ -16,12 +16,43 @@
 .option-box {
     padding: 10px 0;
     opacity: 0.80;
+    position: relative;
+    .option-box-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+    }
+    &::after {
+        z-index: 1;
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 0;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to right, #24354b, #263548);
+        border-radius: 10px;
+        transition: opacity 1.5s ease-out 0s;
+    }
+    &.highlighted {
+        &::after {
+            opacity: 0;
+        }
+    }
 }
 
 .app-detailed-view {
     padding: 5px 15px 10px 15px;
     max-height: 500px;
     width: 100%;
+    &.show.up {
+        animation: pop-up 0.5s ease-out 0s forwards;
+    }
+    &.show.down {
+        animation: pop-down 0.5s ease-out 0s forwards;
+    }
 
     .container {
         padding-top: 10px;
@@ -29,6 +60,28 @@
         width: 100%;
         height: 100%;
         border-top: 1px dashed rgba(255, 255, 255, 0.50);
+    }
+}
+
+@keyframes pop-up {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pop-down {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0px);
     }
 }
 

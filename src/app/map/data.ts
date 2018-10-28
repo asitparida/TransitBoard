@@ -4,7 +4,7 @@ export const LopezMap = {
       '[data-mode="train"][data-to="friday-harbour"][data-from="atlantis-hub"]'
     ],
     flight: [
-      '[data-mode="flight"][data-to="friday-harbour"]'
+      '[data-mode="flight"][data-to="friday-airport"]'
     ],
     points: [
       '[data-point="friday-harbour"]',
@@ -21,7 +21,8 @@ export const LopezMap = {
       '[data-mode="train"][data-to="roche-harbour"][data-from="atlantis-hub"]'
     ],
     flight: [
-      '[data-mode="flight"][data-to="orcas-airport"]'
+      '[data-mode="flight"][data-to="orcas-airport"]',
+      '[data-mode="flight"][data-to="friday-airport"]'
     ],
     points: [
       '[data-point="friday-harbour"]',
@@ -40,10 +41,12 @@ export const LopezMap = {
       '[data-mode="train"][data-to="yacht-haven"][data-from="atlantis-hub"]'
     ],
     flight: [
-      '[data-mode="flight"][data-to="stuart-airport"]'
+      '[data-mode="flight"][data-to="stuart-airport"]',
+      '[data-mode="flight"][data-to="roche-airport"]'
     ],
     points: [
       '[data-point="stuart-airport"]',
+      '[data-point="stuart-harbour"]',
       '[data-point="roche-harbour"]',
       '[data-point="yacht-haven"]',
     ],
@@ -57,7 +60,8 @@ export const LopezMap = {
       '[data-mode="train"][data-to="friday-harbour"][data-from="atlantis-hub"]'
     ],
     flight: [
-      '[data-mode="flight"][data-to="friday-harour"]'
+      '[data-mode="flight"][data-to="friday-harbour"]',
+      '[data-mode="flight"][data-to="friday-airport"]'
     ],
     points: [
       '[data-point="friday-harbour"]',
@@ -73,7 +77,8 @@ export const LopezMap = {
       '[data-mode="train"][data-to="friday-harbour"][data-from="atlantis-hub"]'
     ],
     flight: [
-      '[data-mode="flight"][data-to="friday-harbour"]'
+      '[data-mode="flight"][data-to="friday-harbour"]',
+      '[data-mode="flight"][data-to="friday-airport"]'
     ],
     points: [
       '[data-point="friday-harbour"]',
@@ -89,7 +94,8 @@ export const LopezMap = {
       '[data-mode="train"][data-to="roche-harbour"][data-from="atlantis-hub"]'
     ],
     flight: [
-      '[data-mode="flight"][data-to="roche-harbour"]'
+      '[data-mode="flight"][data-to="roche-harbour"]',
+      '[data-mode="flight"][data-to="roche-airport"]'
     ],
     points: [
       '[data-point="roche-harbour"]',

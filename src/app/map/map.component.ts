@@ -82,6 +82,7 @@ export class MapComponent implements AfterViewInit, OnInit {
     const points = document.querySelectorAll('[data-point]');
     const islands = document.querySelectorAll('[data-island]');
     const islandLabels = document.querySelectorAll('[data-island-label]');
+    const legends = document.querySelectorAll('.legend[data-mode]');
     (flightPaths as any).forEach((path: any) => {
       path.classList.add('reset');
       path.classList.remove('highlight');
@@ -117,6 +118,9 @@ export class MapComponent implements AfterViewInit, OnInit {
       path.classList.remove('highlight');
       path.classList.remove('hidden');
       path.classList.remove('normal');
+    });
+    (legends as any).forEach((path: any) => {
+      path.classList.remove('mute');
     });
   }
 
@@ -157,7 +161,6 @@ export class MapComponent implements AfterViewInit, OnInit {
       });
       const islands = document.querySelectorAll(islandMap.island);
       if (islands.length > 0) {
-        console.log(islands);
         (islands as any).forEach(path => {
           path.classList.remove('reset');
           path.classList.add('highlight');
@@ -165,12 +168,38 @@ export class MapComponent implements AfterViewInit, OnInit {
       }
       const islandLabels = document.querySelectorAll(islandMap.islandLabel);
       if (islandLabels.length > 0) {
-        console.log(islands);
         (islandLabels as any).forEach(path => {
           path.classList.remove('reset');
           path.classList.add('highlight');
         });
       }
+      let legend = document.querySelector('.legend[data-mode="ferry"]');
+      if (!islandMap.ferries || islandMap.ferries.length === 0) {
+        if (legend) {
+          legend.classList.add('mute');
+        }
+      } else {
+        legend.classList.remove('hidden');
+      }
+      console.log(legend, !islandMap.ferries || islandMap.ferries.length === 0);
+      legend = document.querySelector('.legend[data-mode="train"]');
+      if (!islandMap.trains || islandMap.trains.length === 0) {
+        if (legend) {
+          legend.classList.add('mute');
+        }
+      } else {
+        legend.classList.remove('hidden');
+      }
+      console.log(legend, !islandMap.trains || islandMap.trains.length === 0);
+      legend = document.querySelector('.legend[data-mode="flight"]');
+      if (!islandMap.flight || islandMap.flight.length === 0) {
+        if (legend) {
+          legend.classList.add('mute');
+        }
+      } else {
+        legend.classList.remove('hidden');
+      }
+      console.log(legend, !islandMap.flight || islandMap.flight.length === 0);
     }
   }
 }
