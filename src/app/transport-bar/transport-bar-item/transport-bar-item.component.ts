@@ -22,7 +22,7 @@ export class TransportBarItemComponent implements OnInit {
     });
     this.appService.islandHighlighted$.subscribe(data => {
       if (data) {
-        this.somethingHighlighted = this.island.id !== data;
+        this.somethingHighlighted = true;
         if (this.island.id === data) {
           this.highlighted = true;
         } else {

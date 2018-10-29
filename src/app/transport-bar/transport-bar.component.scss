@@ -137,27 +137,27 @@
     &[data-status="ONTIME"] {
       color: #27ae60;
       &.muted {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0);
       }
     }
 
     &[data-status="DELAYED"] {
       color: #e74c3c;
       &.muted {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0);
       }
     }
     &[data-status="ARRIVED"] {
       color: #27ae60;
       &.muted {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0);
       }
     }
 
     &[data-status="BOARDING"] {
       color:$bg;
       &.muted {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0);
       }
     }
 
