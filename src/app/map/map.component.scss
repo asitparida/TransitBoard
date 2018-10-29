@@ -302,6 +302,27 @@
 
 }
 
+[data-point-label] {
+    &.cls-12,
+    &.cls-15,
+    &.cls-18 {
+        transition: opacity 0.5s ease-out 0s;
+        &.reset {
+            fill: #fff;
+            opacity: 0.33;
+        }
+        &.highlight {
+            fill: #fff;
+            opacity: 1 !important;
+        }
+        &.normal {
+            fill: #fff;
+            opacity: 0.50;
+        }
+    }
+
+}
+
 .legend {
     position: fixed;
     top: calc(100vh - 330px);

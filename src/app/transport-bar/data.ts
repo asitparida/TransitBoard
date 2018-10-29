@@ -162,7 +162,7 @@ export const DestinationsInfo = [
     },
     {
         id: 'YACHT',
-        destination: 'Yacht Harbour',
+        destination: 'Yacht Haven',
         status: 'BOARDING',
         options: [
             { mode: 'train', code: 'AC8331', gate: 'B', time: new Date(), status: 'BOARDING' },

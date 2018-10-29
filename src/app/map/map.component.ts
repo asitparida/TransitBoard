@@ -83,6 +83,7 @@ export class MapComponent implements AfterViewInit, OnInit {
     const points = document.querySelectorAll('[data-point]');
     const islands = document.querySelectorAll('[data-island]');
     const islandLabels = document.querySelectorAll('[data-island-label]');
+    const pointLabels = document.querySelectorAll('[data-point-label]');
     const legends = document.querySelectorAll('.legend[data-mode]');
     (flightPaths as any).forEach((path: any) => {
       path.classList.add('reset');
@@ -120,6 +121,12 @@ export class MapComponent implements AfterViewInit, OnInit {
       path.classList.remove('hidden');
       path.classList.remove('normal');
     });
+    (pointLabels as any).forEach((path: any) => {
+      path.classList.add('reset');
+      path.classList.remove('highlight');
+      path.classList.remove('hidden');
+      path.classList.remove('normal');
+    });
     (legends as any).forEach((path: any) => {
       path.classList.remove('mute');
     });
@@ -130,6 +137,7 @@ export class MapComponent implements AfterViewInit, OnInit {
     const trainPaths = document.querySelectorAll('[data-mode="train"]');
     const ferryPaths = document.querySelectorAll('[data-mode="ferry"]');
     const points = document.querySelectorAll('[data-point]');
+    const pointLabels = document.querySelectorAll('[data-point-label]');
     (flightPaths as any).forEach((path: any) => {
       path.classList.add('hidden');
     });
@@ -142,6 +150,9 @@ export class MapComponent implements AfterViewInit, OnInit {
     (points as any).forEach((path: any) => {
       path.classList.add('hidden');
     });
+    (pointLabels as any).forEach(path => {
+        path.classList.add('hidden');
+      });
   }
 
   highlightIsland(islandMap) {
@@ -170,7 +181,16 @@ export class MapComponent implements AfterViewInit, OnInit {
       const islandLabels = document.querySelectorAll(islandMap.islandLabel);
       if (islandLabels.length > 0) {
         (islandLabels as any).forEach(path => {
+          path.classList.remove('hidden');
           path.classList.remove('reset');
+          path.classList.add('highlight');
+        });
+      }
+      const pointLabels = document.querySelectorAll(islandMap.pointLabels);
+      if (pointLabels.length > 0) {
+        (pointLabels as any).forEach(path => {
+          path.classList.remove('reset');
+          path.classList.remove('hidden');
           path.classList.add('highlight');
         });
       }
@@ -182,7 +202,6 @@ export class MapComponent implements AfterViewInit, OnInit {
       } else {
         legend.classList.remove('hidden');
       }
-      console.log(legend, !islandMap.ferries || islandMap.ferries.length === 0);
       legend = document.querySelector('.legend[data-mode="train"]');
       if (!islandMap.trains || islandMap.trains.length === 0) {
         if (legend) {
@@ -191,7 +210,6 @@ export class MapComponent implements AfterViewInit, OnInit {
       } else {
         legend.classList.remove('hidden');
       }
-      console.log(legend, !islandMap.trains || islandMap.trains.length === 0);
       legend = document.querySelector('.legend[data-mode="flight"]');
       if (!islandMap.flight || islandMap.flight.length === 0) {
         if (legend) {
@@ -200,7 +218,6 @@ export class MapComponent implements AfterViewInit, OnInit {
       } else {
         legend.classList.remove('hidden');
       }
-      console.log(legend, !islandMap.flight || islandMap.flight.length === 0);
     }
   }
 }
