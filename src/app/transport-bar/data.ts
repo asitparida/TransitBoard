@@ -66,17 +66,17 @@ export const DestinationsInfo = [
         attractions: [
             {
                 'name': 'Spencer State Park',
-                'description': 'Spencer Spit, providing dramatic, east-facing views of Decatur and Blakely islands and featuring a rare sand spit enclosed by a salt-chuck lagoon, may be just what you had in mind.',
+                'description': 'Have a look at the mesmerising views of Decatur and Blakely islands, featuring a rare sand spit enclosed by a salt-chuck lagoon.',
                 'icon': 'statepark'
             },
             {
                 'name': 'Iceberg Point',
-                'description': 'A short loop hike to rock cliffs, with fantastic views out towards the Olympic Peninsula, and back toward other parts of Lopez. It is suitable for children, dogs on leash, and folks of all ages.',
+                'description': 'A short loop hike to rock cliffs, with fantastic views out towards the Olympic Peninsula, and back toward other parts of Lopez.',
                 'icon': 'hiking'
             },
             {
-                'name': 'Historical Museum',
-                'description': 'To collect, preserve, share and interpret local history, the Lopez Island Historical Society Museum increases awareness and appreciation of this resource for the educational benefit of current and future generations.',
+                'name': 'Lopez Island Museum',
+                'description': 'The historical museum increases awareness and appreciation for the educational benefit of current and future generations.',
                 'icon': 'museum'
             }
         ]
@@ -117,7 +117,7 @@ export const DestinationsInfo = [
         attractions: [
             {
                 'name': 'The Whale Museum',
-                'description': 'The Whale Museum is a natural history museum located in Friday Harbor, Washington. Its mission is to promote the stewardship of wild whales in the Salish Sea ecosystem through education and research programs.',
+                'description': 'The natural history museum promotes the stewardship of wild whales in the Salish Sea ecosystem through education and research programs.',
                 'icon': 'whaling'
             },
             {
@@ -127,7 +127,7 @@ export const DestinationsInfo = [
             },
             {
                 'name': 'Wildlife Tours',
-                'description': 'You will take in the Breathtaking Beauty of the San Juan Islands as we cruise among them. No two tours are the same and each is a wonderful experience with marine life of the Salish Sea.',
+                'description': 'Take in the breathtaking beauty of the San Juan Islands as we cruise among them. Experience the wonder of marine life.',
                 'icon': 'wildlife'
             }
         ]
@@ -145,7 +145,7 @@ export const DestinationsInfo = [
         attractions: [
             {
                 'name': 'Whale watching',
-                'description': 'Roche Harbor knows this is amongst the most popular attractions for our guests, and features whale watching excursions directly out of our harbor.',
+                'description': 'Roche Harbor features the popular whale watching excursions directly out of our harbor.',
                 'icon': 'whaling'
             },
             {
@@ -155,7 +155,7 @@ export const DestinationsInfo = [
             },
             {
                 'name': 'Bocce',
-                'description': 'At Roche Harbor, we take our bocce seriously.  Two 65-foot, side-by-side courts that were custom-built with crushed oystershells provide an authentic experience like few places outside of Italy.',
+                'description': 'At Roche Harbor, we take our bocce seriously.  The crushed oystershells court provide an authentic experience like few places outside of Italy.',
                 'icon': 'bocce'
             }
         ]
