@@ -23,6 +23,7 @@ export class MapComponent implements AfterViewInit, OnInit {
           case 'LOPEZ' : { this.hide(); this.highlightIsland(Maps.LopezMap); break; }
           case 'FRIDAY' : { this.hide(); this.highlightIsland(Maps.FridayMap); break; }
           case 'ROCHE' : { this.hide(); this.highlightIsland(Maps.RocheMap); break; }
+          case 'YACHT' : { this.hide(); this.highlightIsland(Maps.YachtMap); break; }
         }
       } else {
         this.normalDisplay();

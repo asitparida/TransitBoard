@@ -15,6 +15,7 @@ export class TransportBarComponent implements OnInit, AfterViewInit {
   // tslint:disable max-line-length
   depTime = new Date();
   audioEl;
+  higlighted = false;
   islandOtions = [
     {
       id: 'ORCAS',
@@ -32,6 +33,9 @@ export class TransportBarComponent implements OnInit, AfterViewInit {
         { mode: 'flight', code: 'AC8331', gate: 'B1', time: new Date(), status: 'DELAYED' },
         { mode: 'flight', code: 'AC8331', gate: 'B1', time: new Date(), status: 'ONTIME' },
         { mode: 'flight', code: 'AC8331', gate: 'B1', time: new Date(), status: 'ONTIME' }
+      ],
+      attractions: [
+        { id: 1, name: 'Whale Watching', description: 'Lipsum text' }
       ]
     },
     {
@@ -105,6 +109,18 @@ export class TransportBarComponent implements OnInit, AfterViewInit {
         { mode: 'flight', code: 'AC8331', gate: 'B1', time: new Date(), status: 'BOARDING' },
         { mode: 'flight', code: 'AC8331', gate: 'B1', time: new Date(), status: 'DELAYED' }
       ]
+    },
+    {
+      id: 'YACHT',
+      destination: 'Yacht Harbour',
+      connection: false,
+      standalone: true,
+      status: 'BOARDING',
+      standaloneMode: { mode: 'train', modeIcon: 'airplanemode_active', position: 150, status: 'DELAYED', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Roche Harbour', arrivalTime: new Date(), meta: 'Platform 1' },
+      options: [
+        { mode: 'train', code: 'AC8331', gate: 'B', time: new Date(), status: 'BOARDING' },
+        { mode: 'train', code: 'AC8331', gate: 'B', time: new Date(), status: 'BOARDING' }
+      ]
     }
   ];
   debouncedReset = _.debounce(this.reset, 15000);
@@ -138,6 +154,13 @@ export class TransportBarComponent implements OnInit, AfterViewInit {
         }
         this.activateIsland(this.islandOtions[this.currentIndex].id, 'DOWN');
         this.debouncedReset();
+      }
+    });
+    this.appService.islandHighlighted$.subscribe((data) => {
+      if (data) {
+        this.higlighted = true;
+      } else {
+        this.higlighted = false;
       }
     });
   }

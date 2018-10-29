@@ -34,9 +34,9 @@
 .ptf-details {
   display: inline-block;
   width: calc(66% - 300px);
-  padding: 0 30px;
+  padding: 0 30px 0 15px;
   vertical-align: small;
-  margin-left: 100px;
+  margin-left: 15px;
   color: $light-text-color;
 
   i {
@@ -51,7 +51,7 @@
     background-color: #24354b;
     z-index: 2;
     top: 3px;
-    // color: #000;
+    display: none;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.50);
 
     &[data-color="flight"] {
@@ -95,7 +95,7 @@
     line-height: 36px;
     margin: 0;
     position: relative;
-    margin-right: 100px;
+    margin-right: 70px;
     text-align: left;
     z-index: 3;
 
@@ -103,10 +103,10 @@
       content: '';
       position: absolute;
       top: 18px;
-      left: -15px;
+      left: 0px;
       height: 1px;
-      width: 116px;
-      border-top: 1px dashed #24354b;
+      width: 30px;
+      border-top: 1px dashed lighten(#24354b, 10);
       -webkit-transform-origin: left center;
       transform-origin: left center;
       -webkit-transform: translateX(-100%);

@@ -103,3 +103,17 @@ export const LopezMap = {
       '[data-point="orcas-harbour"]'
     ]
   };
+
+  export const YachtMap = {
+    ferries: ['[data-mode="ferry"][data-to="stuart-harbour"][data-from="yacht-haven"]'],
+    trains: [
+      '[data-mode="train"][data-to="roche-harbour"]',
+      '[data-mode="train"][data-to="yacht-haven"]'
+    ],
+    flight: [],
+    points: [
+      '[data-point="roche-harbour"]',
+      '[data-point="stuart-harbour"]',
+      '[data-point="yacht-haven"]'
+    ]
+  };

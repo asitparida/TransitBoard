@@ -304,16 +304,16 @@
 
 .legend {
     position: fixed;
-    top: 15px;
+    top: calc(100vh - 330px);
     width: calc(100vw - 600px);
     height: 60px;
-    left: 0px;
+    left: 30px;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     justify-content: center;
     .legend-item {
         max-width: 200px;
-        margin-right: 30px;
+        margin-bottom: 30px;
         position: relative;
         .svg-wrapper {
             height: 1px;
@@ -335,6 +335,12 @@
             top: -5px;
             &.plane {                
                 top: -3px;
+            }
+            &.train {                
+                top: 0px;
+            }
+            &.boat {                
+                left: 55px;
             }
             &.mute {
                 opacity: 0.10;

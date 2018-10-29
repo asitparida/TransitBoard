@@ -3,9 +3,27 @@
 .mode {
     &.option {
         display: inline-block;
-        width: 25%;
+        width: 33%;
         float: left;
         padding: 0px 5px 5px 15px;
+        .mode-type {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            left: -3px;
+            top: 0px;
+            &.train {
+                width: 30px;
+                height: 30px;
+                mask-size: 18px;
+            }
+            &.plane {
+                width: 30px;
+                height: 30px;
+                mask-size: 16px;
+                top: -3px;
+            }
+        }
     }
 }
 .places {

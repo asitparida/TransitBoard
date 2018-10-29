@@ -55,7 +55,10 @@
     position: relative;
     z-index: 2;
     &:not(:last-child) {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      &.somethingHighlighted {
+        margin-bottom: 5px;
+      }
     }
 
     .box-title {
@@ -257,6 +260,7 @@
 
           &.left {
             color: rgba(255, 255, 255, 0.90);
+            margin-bottom: 0;
           }
         }
 

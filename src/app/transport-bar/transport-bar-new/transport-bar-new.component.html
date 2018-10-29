@@ -1,13 +1,16 @@
 <ng-container *ngFor="let option of island.options; let  i = index;">
-  <div class="mode option" *ngIf="i < 4">
+  <div class="mode option" *ngIf="i < 3">
     <div class="places">
-      <label class="left time"><span *ngIf="option?.status === 'BOARDING'" [attr.data-status]="option.status">{{option.time
-          | date: 'shortTime'}}</span><span *ngIf="option?.status !== 'BOARDING'">{{option.time | date: 'shortTime'}}</span></label>
-      <label class="left destination-name" *ngIf="option?.mode === 'train'">PLATFORM {{option.gate}}<span *ngIf="option?.status !== 'BOARDING'"
+      <label class="left time">
+          <span *ngIf="option?.status === 'BOARDING'" [attr.data-status]="option.status">{{option.time | date: 'shortTime'}}</span>
+          <span *ngIf="option?.status !== 'BOARDING'">{{option.time | date: 'shortTime'}}</span>
+        </label>
+      <label class="left destination-name" *ngIf="option?.mode === 'train'"><div class="mode-type train" *ngIf="option?.mode === 'train'"></div> PLATFORM {{option.gate}}<span *ngIf="option?.status !== 'BOARDING'"
           class="option-status" [attr.data-status]="option.status"><span class="bar-separtor">|</span>
           {{option.status}}</span></label>
-      <label class="left destination-name" *ngIf="option?.mode === 'flight'">{{option?.code}}<span *ngIf="option?.status === 'BOARDING'"><span
-            class="bar-separtor">|</span>GATE {{option.gate}}</span><span [attr.data-status]="option.status" class="option-status"
+      <label class="left destination-name" *ngIf="option?.mode === 'flight'">
+        <div class="mode-type plane" *ngIf="option?.mode === 'flight'"></div>{{option?.code}}<span *ngIf="option?.status === 'BOARDING'"><span
+            class="bar-separtor">|</span> GATE {{option.gate}}</span><span [attr.data-status]="option.status" class="option-status"
           *ngIf="option?.status !== 'BOARDING'"><span class="bar-separtor">|</span>{{option.status}}</span></label>
     </div>
   </div>
