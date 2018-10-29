@@ -1,0 +1,130 @@
+// tslint:disable max-line-length
+export const AttractionsByPlaces =  [
+    {
+        'id': 'FRIDAY',
+        'name' : 'Friday Harbour',
+        'attractions' : [
+            {
+                'name' : 'The Whale Museum',
+                'description': 'The Whale Museum is a natural history museum located in Friday Harbor, Washington. Its mission is to promote the stewardship of wild whales in the Salish Sea ecosystem through education and research programs.',
+                'icon': 'whale.png'
+            },
+            {
+                'name' : 'Whale watching',
+                'description': 'Adventure boat rides to see orcas, sea lions, porpoises, bald eagles & the scenic San Juan Islands.',
+                'icon': 'museum.png'
+            },
+            {
+                'name' : 'Wildlife Tours',
+                'description': 'You will take in the Breathtaking Beauty of the San Juan Islands as we cruise among them. No two tours are the same and each is a wonderful experience with marine life of the Salish Sea.',
+                'icon': 'wildlife.png'
+            }
+        ]
+    },
+    {
+        'id': 'LOPEZ',
+        'name' : 'Lopez Island',
+        'attractions' : [
+            {
+                'name' : 'Spencer State Park',
+                'description': 'Spencer Spit, providing dramatic, east-facing views of Decatur and Blakely islands and featuring a rare sand spit enclosed by a salt-chuck lagoon, may be just what you had in mind.',
+                'icon': 'statepark.png'
+            },
+            {
+                'name' : 'Iceberg Point',
+                'description': 'A short loop hike to rock cliffs, with fantastic views out towards the Olympic Peninsula, and back toward other parts of Lopez. It is suitable for children, dogs on leash, and folks of all ages.',
+                'icon': 'hiking.png'
+            },
+            {
+                'name' : 'Historical Museum',
+                'description': 'To collect, preserve, share and interpret local history, the Lopez Island Historical Society Museum increases awareness and appreciation of this resource for the educational benefit of current and future generations.',
+                'icon': 'museum.png'
+            }
+        ]
+    },
+    {
+        'id': 'ORCAS',
+        'name' : 'Orcas Island',
+        'attractions' : [
+            {
+                'name' : 'Moran State Park',
+                    'description': 'The park offers 38 miles of hiking trails, 11 miles of biking trails, horseback riding on 6 miles of trails, non-motorized boating from two boat ramps, and year-round camping. The Mount Constitution observation tower commands sweeping marine views from the highest point in the San Juan Islands.',
+                    'icon': 'statepark.png'
+            },
+            {
+                'name' : 'National Monument',
+                'description': 'The monument protects archaeological sites of the Coast Salish peoples, lighthouses and relics of early European American settlers in the Pacific Northwest, and biodiversity of the island life in the region.',
+                'icon': 'monument.png'
+            }
+        ]
+    },
+    {
+        'id': 'SHAW',
+        'name' : 'Shaw Island',
+        'attractions' : [
+            {
+                'name' : 'Canoe Island',
+                'description': 'Canoe Island lies in the center of the San Juan Islands. The two water approaches to Indian Cove County Park on Shaw Island pass to either side of Canoe Island, which protects Indian Cove from high waves and surf.',
+                'icon': 'campisland.png'
+            },
+            {
+                'name' : 'Shaw County Park',
+                'description': 'Enjoy the sun and beaches. There are plenth of activities to do at Shaw County Park including kayaking, hiking, and seeing seals in their natural habitat.',
+                'icon': 'statepark.png'
+            }
+        ]
+    },
+    {
+        'id': 'STUART',
+        'name' : 'Stuart Island',
+        'attractions' : [
+            {
+                'name' : 'Turn Point Lighthouse',
+                'description': 'The Turn Point Light is an active aid to navigation overlooking the Haro Straits from the western tip of Stuart Island, San Juan County, off the coast of Washington state in the northwest of the United States.',
+                'icon': 'lighthouse.png'
+            },
+            {
+                'name' : 'State Park',
+                'description': 'Stuart Island State Park in San Juan County, Washington is a marine camping park in the Washington State Park System. It consists of 433 acres of land and waterways on and around Stuart Island.',
+                'icon': 'statepark.png'
+            }
+        ]
+    },
+    {
+        'id': 'ROCHE',
+        'name' : 'Roche Harbor',
+        'attractions' : [
+            {
+                'name' : 'Whale watching',
+                'description': 'Roche Harbor knows this is amongst the most popular attractions for our guests, and features whale watching excursions directly out of our harbor.',
+                'icon': 'whale.png'
+            },
+            {
+                'name' : 'Kayaking',
+                'description': 'One of the best ways - and certainly the most peaceful - to experience the wonder of San Juan Island is to venture out in a sea kayak. Pair up and paddle through kelp forests, under the wings of soaring bald eagles, or off the shore of sunning sea lions.',
+                'icon': 'kayak.png'
+            },
+            {
+                'name' : 'Bocce',
+                'description': 'At Roche Harbor, we take our bocce seriously.  Two 65-foot, side-by-side courts that were custom-built with crushed oystershells provide an authentic experience like few places outside of Italy.',
+                'icon': 'bocce.png'
+            }
+        ]
+    },
+    {
+        'id': 'YACHT',
+        'name' : 'Yacht Haven',
+        'attractions' : [
+            {
+                'name' : 'Cycling',
+                'description': 'When you come to San Juan Island you will see plenty of cyclists enjoying the weather and the scenery. And why not? There are plenty of places on the island to pull over and enjoy the view.',
+                'icon': 'cycling.png'
+            },
+            {
+                'name' : 'English Camp',
+                'description': 'Hike the trails at English and American camps, pick blackberries, and observe flowers and trees.',
+                'icon': 'hiking.png'
+            }
+        ]
+    }
+];

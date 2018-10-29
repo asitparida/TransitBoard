@@ -110,12 +110,12 @@
 }
 .activity-item {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     flex-flow: column;
     min-width: 33%;
     max-width: 33%;
-    padding: 0 5px;
+    padding: 20px 5px 0 5px;
     .icon-wrapper {
         width: 80px;
         height: 80px;
@@ -166,14 +166,73 @@
             mask-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.80);
         }
+        .statepark {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/statepark.png);
+            mask-size: 42px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+        }
+        .museum {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/museum.png);
+            mask-size: 42px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+        }
+        .lighthouse {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/lighthouse.png);
+            mask-size: 42px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+        }
+        .bocce {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/bocce.png);
+            mask-size: 42px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+        }
+        .monument {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/monument.png);
+            mask-size: 42px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+        }
+        .campisland {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/campisland.png);
+            mask-size: 42px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+        }
+        .wildlife {
+            height: 48px;
+            width: 48px;
+            mask-image: url(../../../assets/wildlife.png);
+            mask-size: 42px;
+            mask-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.80);
+        }
     }
     label {
+        margin-block-start: 5px;
         color: rgba(255, 255, 255, 1);
-        line-height: 36px;
+        line-height: 28px;
     }
     p {
-        font-size: xx-small;
+        font-size: small;
         color: rgba(255, 255, 255, 0.80);
-        text-align: justify;
+        text-align: left;
+        margin: 5px 0;
+        font-weight: 300;
     }
 }

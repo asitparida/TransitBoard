@@ -7,9 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TransportBarDetailedComponent implements OnInit {
   @Input() island;
+  width = 33;
 
   constructor() { }
 
   ngOnInit() {
+    if (this.island && this.island.attractions.length > 0) {
+      this.width = (100 / this.island.attractions.length);
+      this.width = Math.floor(this.width);
+    }
   }
 }

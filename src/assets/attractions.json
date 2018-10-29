@@ -2,6 +2,7 @@
 {
     "data": [
         {
+            "id": "FRIDAY",
             "name" : "Friday Harbour",
             "attractions" : [
                 {
@@ -22,6 +23,7 @@
             ] 
         },
         {
+            "id": "LOPEZ",
             "name" : "Lopez Island",
             "attractions" : [
                 {
@@ -42,6 +44,7 @@
             ] 
         },
         {
+            "id": "ORCAS",
             "name" : "Orcas Island",
             "attractions" : [
                 {
@@ -57,6 +60,7 @@
             ] 
         },
         {
+            "id": "SHAW",
             "name" : "Shaw Island",
             "attractions" : [
                 {
@@ -72,6 +76,7 @@
             ] 
         },
         {
+            "id": "STUART",
             "name" : "Stuart Island",
             "attractions" : [
                 {
@@ -87,6 +92,7 @@
             ] 
         },
         {
+            "id": "ROCHE",
             "name" : "Roche Harbor",
             "attractions" : [
                 {
@@ -107,6 +113,7 @@
             ] 
         },
         {
+            "id": "YACHT",
             "name" : "Yacht Haven",
             "attractions" : [
                 {
@@ -120,6 +127,6 @@
                     "icon": "hiking.png"
                 }
             ] 
-        },
+        }
     ]
 }

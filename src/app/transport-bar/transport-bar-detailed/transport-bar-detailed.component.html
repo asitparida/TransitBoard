@@ -28,26 +28,12 @@
   </div>
   <div class="mode-place-details">
     <div class="activity-item-wrapper">
-      <div class="activity-item">
+      <div class="activity-item" *ngFor="let place of island.attractions" [style.minWidth]="width + '%'" [style.maxWidth]="width + '%'">
         <div class="icon-wrapper">
-          <div class="whaling"></div>
+          <div [ngClass]="place.icon"></div>
         </div>
-        <label>Whale Watching</label>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-      <div class="activity-item">
-        <div class="icon-wrapper">
-          <div class="kayaking"></div>
-        </div>
-        <label>Kayaking</label>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-      <div class="activity-item">
-        <div class="icon-wrapper">
-          <div class="golfing"></div>
-        </div>
-        <label>Golf</label>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <label>{{place.name}}</label>
+        <p>{{place.description}}</p>
       </div>
     </div>
   </div>
