@@ -34,7 +34,7 @@ export class TransportBarComponent implements OnInit, AfterViewInit {
           this.currentIndex = this.islandOtions.length - 1;
         }
         this.activateIsland(this.islandOtions[this.currentIndex].id, 'UP');
-        // this.debouncedReset();
+        this.debouncedReset();
       } else if ((e as KeyboardEvent).key === 'ArrowDown') {
         if (this.currentIndex === null) {
           this.currentIndex = -1;
@@ -44,7 +44,7 @@ export class TransportBarComponent implements OnInit, AfterViewInit {
           this.currentIndex = 0;
         }
         this.activateIsland(this.islandOtions[this.currentIndex].id, 'DOWN');
-        // this.debouncedReset();
+        this.debouncedReset();
       }
     });
     this.appService.islandHighlighted$.subscribe((data) => {
