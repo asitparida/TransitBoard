@@ -8,14 +8,14 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./header-a.component.scss']
 })
 export class HeaderAComponent implements OnInit {
-  time = new Date();
+  time = new Date('10/30/2018 07:45');
   currentWeather =  this._sanitizer.bypassSecurityTrustHtml(GetPartlySunny('rgba(255, 255, 255, 0.80)', 80));
   constructor(private _sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     setInterval(() => {
       this.time = new Date(this.time.getTime() + 1 * 60000);
-    }, 2000);
+    }, 5000);
   }
 
 

@@ -1,3 +1,5 @@
+@import '../../../styles.scss';
+
 .mode {
     &.option.blocked {
         display: block;
@@ -54,6 +56,10 @@
                 width: 100px;
                 display: flex;
                 flex-flow: column;
+
+                [data-status="BOARDING"] {
+                    color: $bg;
+                }
             }
 
             .key {
@@ -91,6 +97,7 @@
         order: 1;
         margin-bottom: 7px;
     }
+
     .mode-place-details {
         flex: initial;
         order: 2;
@@ -102,12 +109,14 @@
         padding-top: 5px;
     }
 }
+
 .activity-item-wrapper {
     width: 100%;
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
 }
+
 .activity-item {
     display: flex;
     justify-content: flex-start;
@@ -116,6 +125,7 @@
     min-width: 33%;
     max-width: 33%;
     padding: 20px 5px 0 5px;
+
     .icon-wrapper {
         width: 80px;
         height: 80px;
@@ -124,6 +134,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         .whaling {
             height: 48px;
             width: 48px;
@@ -134,6 +145,7 @@
             position: relative;
             top: 4px;
         }
+
         .golfing {
             height: 48px;
             width: 48px;
@@ -142,6 +154,7 @@
             mask-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.80);
         }
+
         .kayaking {
             height: 48px;
             width: 48px;
@@ -150,6 +163,7 @@
             mask-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.80);
         }
+
         .cycling {
             height: 48px;
             width: 48px;
@@ -158,6 +172,7 @@
             mask-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.80);
         }
+
         .hiking {
             height: 48px;
             width: 48px;
@@ -166,6 +181,7 @@
             mask-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.80);
         }
+
         .statepark {
             height: 48px;
             width: 48px;
@@ -174,6 +190,7 @@
             mask-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.80);
         }
+
         .museum {
             height: 48px;
             width: 48px;
@@ -182,6 +199,7 @@
             mask-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.80);
         }
+
         .lighthouse {
             height: 48px;
             width: 48px;
@@ -190,6 +208,7 @@
             mask-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.80);
         }
+
         .bocce {
             height: 48px;
             width: 48px;
@@ -198,6 +217,7 @@
             mask-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.80);
         }
+
         .monument {
             height: 48px;
             width: 48px;
@@ -206,6 +226,7 @@
             mask-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.80);
         }
+
         .campisland {
             height: 48px;
             width: 48px;
@@ -214,6 +235,7 @@
             mask-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.80);
         }
+
         .wildlife {
             height: 48px;
             width: 48px;
@@ -223,11 +245,13 @@
             background-color: rgba(255, 255, 255, 0.80);
         }
     }
+
     label {
         margin-block-start: 5px;
         color: rgba(255, 255, 255, 1);
         line-height: 28px;
     }
+
     p {
         font-size: small;
         color: rgba(255, 255, 255, 0.80);

@@ -9,13 +9,14 @@ import { AppService } from '../app.service';
 })
 export class MapComponent implements AfterViewInit, OnInit {
   count = 0;
-
+  activeId = null;
   constructor(private appService: AppService) { }
 
   ngOnInit() {
     this.appService.islandHighlighted$.subscribe((data) => {
       this.reset();
       if (data) {
+        this.activeId = data;
         switch (data) {
           case 'ORCAS' : { this.hide(); this.highlightIsland(Maps.OrcasMap); break; }
           case 'SHAW' : { this.hide(); this.highlightIsland(Maps.ShawMap); break; }
@@ -26,6 +27,7 @@ export class MapComponent implements AfterViewInit, OnInit {
           case 'YACHT' : { this.hide(); this.highlightIsland(Maps.YachtMap); break; }
         }
       } else {
+        this.activeId = null;
         this.normalDisplay();
       }
     });
@@ -90,18 +92,21 @@ export class MapComponent implements AfterViewInit, OnInit {
       path.classList.remove('highlight');
       path.classList.remove('hidden');
       path.classList.remove('normal');
+      path.classList.remove('boarding');
     });
     (trainPaths as any).forEach((path: any) => {
       path.classList.add('reset');
       path.classList.remove('highlight');
       path.classList.remove('hidden');
       path.classList.remove('normal');
+      path.classList.remove('boarding');
     });
     (ferryPaths as any).forEach((path: any) => {
       path.classList.add('reset');
       path.classList.remove('highlight');
       path.classList.remove('hidden');
       path.classList.remove('normal');
+      path.classList.remove('boarding');
     });
     (points as any).forEach((path: any) => {
       path.classList.add('reset');
@@ -171,6 +176,19 @@ export class MapComponent implements AfterViewInit, OnInit {
           });
         }
       });
+      if (this.activeId === 'ORCAS') {
+        [
+          ...islandMap.trains || []
+        ].forEach(pathId => {
+          const paths = document.querySelectorAll(pathId);
+          if (paths && paths.length > 0) {
+            (paths as any).forEach(path => {
+              path.classList.add('boarding');
+            });
+          }
+        });
+      }
+      // if (this.is)
       const islands = document.querySelectorAll(islandMap.island);
       if (islands.length > 0) {
         (islands as any).forEach(path => {

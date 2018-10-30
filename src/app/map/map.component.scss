@@ -197,6 +197,9 @@
         &.reverse {
             animation: reverse-dash 10s linear alternate infinite;
         }
+        &.boarding {
+            stroke: #ffde03 !important;
+        }
     }
     &.normal {
         stroke: #4fffff !important;
@@ -217,6 +220,9 @@
         &.reverse {
             animation: reverse-dash 10s linear alternate infinite;
         }
+        &.boarding {
+            stroke: #ffde03 !important;
+        }
     }
     &.normal {
         stroke: #4fffff !important;
@@ -236,6 +242,9 @@
         animation: dash 10s linear alternate infinite;
         &.reverse {
             animation: reverse-dash 10s linear alternate infinite;
+        }
+        &.boarding {
+            stroke: #ffde03 !important;
         }
     }
     &.normal {

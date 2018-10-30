@@ -5,18 +5,12 @@ export const DestinationsInfo = [
         destination: 'Orcas Island',
         status: 'BOARDING',
         options: [
-            { mode: 'train', connecting: 'Roche Harbour', code: '', gate: 'A', time: new Date('10/29/2018 08:00'), status: 'BOARDING' },
-            { mode: 'train', connecting: 'Friday Harbour', code: '', gate: 'B', time: new Date('10/29/2018 08:00'), status: 'BOARDING' },
+            { mode: 'train', code: '', gate: 'A', time: new Date('10/29/2018 08:00'), status: 'BOARDING' },
+            { mode: 'train', code: '', gate: 'B', time: new Date('10/29/2018 08:00'), status: 'BOARDING' },
             { mode: 'flight', code: 'SJ8686', gate: 'B2', time: new Date('10/29/2018 08:10'), status: 'DELAYED' },
-            { mode: 'flight', code: 'SJ8331', gate: 'B1', time: new Date('10/29/2018 08:36'), status: 'ONTIME' },
-            { mode: 'flight', code: 'SJ8336', gate: 'B7', time: new Date('10/29/2018 08:56'), status: 'ONTIME' },
-            { mode: 'flight', code: 'SJ8332', gate: 'B2', time: new Date('10/29/2018 08:40'), status: 'ONTIME' }
-            // A	8:00 AM
-            // B	8:00 AM
-            // Roche Habour	8686	B2	8:10	Delayed	SJ
-            // Friday Harbour	8331	B1	8:36	ONTIME	SJ
-            // Friday Harbour	8336	B7	8:56	ONTIME	SJ
-            // 8:40 Orcas Island	8332	B2	8:40	ONTIME	SJ
+            { mode: 'flight', code: 'SJ8331', gate: 'B1', time: new Date('10/29/2018 08:36'), status: 'ON TIME' },
+            { mode: 'flight', code: 'SJ8336', gate: 'B7', time: new Date('10/29/2018 08:56'), status: 'ON TIME' },
+            { mode: 'flight', code: 'SJ8332', gate: 'B2', time: new Date('10/29/2018 08:40'), status: 'ON TIME' }
         ],
         attractions: [
             {
@@ -36,20 +30,12 @@ export const DestinationsInfo = [
         destination: 'Stuart Island',
         status: 'BOARDING',
         options: [
-            { mode: 'train', connecting: 'Roche Harbour', code: '', gate: 'A', time: new Date('10/29/2018 08:00'), status: 'BOARDING' },
-            { mode: 'train', connecting: 'Yacht Haven', code: '', gate: 'B', time: new Date('10/29/2018 08:00'), status: 'BOARDING' },
+            { mode: 'train', code: '', gate: 'A', time: new Date('10/29/2018 08:00'), status: 'BOARDING' },
+            { mode: 'train', code: '', gate: 'B', time: new Date('10/29/2018 08:00'), status: 'BOARDING' },
             { mode: 'flight', code: 'SJ8686', gate: 'B2', time: new Date('10/29/2018 08:10'), status: 'BOARDING' },
-            { mode: 'flight', code: 'SJ8943', gate: 'B2', time: new Date('10/29/2018 08:35'), status: 'ONTIME' },
-            { mode: 'flight', code: 'SJ8336', gate: 'B7', time: new Date('10/29/2018 08:36'), status: 'ONTIME' },
-            { mode: 'flight', code: 'SJ8332', gate: 'B2', time: new Date('10/29/2018 08:56'), status: 'ONTIME' }
-            // A	8:00 AM
-            // B	8:00 AM
-            // Roche Habour	8686	B2	8:10	Delayed	SJ
-            // Stuart Island	8943	B8	8:35	ONTIME	SJ
-            // Friday Harbour	8331	B1	8:36	ONTIME	SJ
-            // Friday Harbour	8336	B7	8:56	ONTIME	SJ
-            // Stuart Island	8996	B3	9:16	ONTIME	SJ
-            //
+            { mode: 'flight', code: 'SJ8943', gate: 'B2', time: new Date('10/29/2018 08:35'), status: 'ON TIME' },
+            { mode: 'flight', code: 'SJ8336', gate: 'B7', time: new Date('10/29/2018 08:36'), status: 'ON TIME' },
+            { mode: 'flight', code: 'SJ8332', gate: 'B2', time: new Date('10/29/2018 08:56'), status: 'ON TIME' }
         ],
         attractions: [
             {
@@ -68,21 +54,18 @@ export const DestinationsInfo = [
         id: 'LOPEZ',
         destination: 'Lopez Island',
         connection: true,
-        status: 'ONTIME',
+        status: 'BOARDING',
+        modes: [
+            { mode: 'train', status: 'DELAYED', modeIcon: 'train', departureFrom: 'Atlantis Hub', departureTime: new Date(), arrivalAt: 'Friday Harbour', arrivalTime: new Date(), meta: 'Platform 1' },
+            { mode: 'boat', status: 'ONTIME', modeIcon: 'directions_boat', departureFrom: 'Friday Harbour', departureTime: new Date(), arrivalAt: 'Stuart Harbour', arrivalTime: new Date(), meta: 'Dock A' },
+        ],
         options: [
-            { mode: 'train', connecting: 'Friday Harbour', code: '', gate: 'B', time: new Date('10/29/2018 08:36'), status: 'ONTIME' },
-            { mode: 'flight', code: 'SJ8331', gate: 'B1', time: new Date('10/29/2018 08:36'), status: 'ONTIME' },
-            { mode: 'flight', code: 'NK1885', gate: 'C13', time: new Date('10/29/2018 08:40'), status: 'ONTIME' },
-            { mode: 'flight', code: 'NK1884', gate: 'C7', time: new Date('10/29/2018 08:56'), status: 'ONTIME' },
-            { mode: 'flight', code: 'SJ8336', gate: 'B7', time: new Date('10/29/2018 08:56'), status: 'ONTIME' },
-            { mode: 'flight', code: 'NK1883', gate: 'C2', time: new Date('10/29/2018 09:00'), status: 'ONTIME' }
-            // B	8:00 AM
-            // Friday Harbour	8331	B1	8:36	ONTIME	SJ
-            // Friday Harbour	1885	C13	8:36	ONTIME	NK
-            // Friday Harbour	1884	C7	8:40	ONTIME	NK
-            // Friday Harbour	8336	B7	8:56	ONTIME	SJ
-            // Friday Harbour	1883	C2	8:56	ONTIME	NK
-            // Friday Harbour	1889	C4	9:00	Cancelled	NK
+            { mode: 'train', code: '', gate: 'B', time: new Date('10/29/2018 08:36'), status: 'BOARDING' },
+            { mode: 'flight', code: 'SJ8331', gate: 'B1', time: new Date('10/29/2018 08:36'), status: 'ON TIME' },
+            { mode: 'flight', code: 'NK1885', gate: 'C13', time: new Date('10/29/2018 08:40'), status: 'ON TIME' },
+            { mode: 'flight', code: 'NK1884', gate: 'C7', time: new Date('10/29/2018 08:56'), status: 'ON TIME' },
+            { mode: 'flight', code: 'SJ8336', gate: 'B7', time: new Date('10/29/2018 08:56'), status: 'ON TIME' },
+            { mode: 'flight', code: 'NK1883', gate: 'C2', time: new Date('10/29/2018 09:00'), status: 'ON TIME' }
         ],
         attractions: [
             {
@@ -105,22 +88,14 @@ export const DestinationsInfo = [
     {
         id: 'SHAW',
         destination: 'Shaw Island',
-        status: 'ONTIME',
+        status: 'BOARDING',
         options: [
-            { mode: 'train', connecting: 'Friday Harbour', code: '', gate: 'B', time: new Date('10/29/2018 08:36'), status: 'ONTIME' },
-            { mode: 'flight', code: 'SJ8331', gate: 'B1', time: new Date('10/29/2018 08:36'), status: 'ONTIME' },
-            { mode: 'flight', code: 'NK1885', gate: 'C13', time: new Date('10/29/2018 08:40'), status: 'DELAYED' },
-            { mode: 'flight', code: 'NK1884', gate: 'C7', time: new Date('10/29/2018 08:56'), status: 'ONTIME' },
-            { mode: 'flight', code: 'SJ8336', gate: 'B7', time: new Date('10/29/2018 08:56'), status: 'ONTIME' },
-            { mode: 'flight', code: 'NK1883', gate: 'C2', time: new Date('10/29/2018 09:00'), status: 'ONTIME' }
-            // B	8:00 AM
-            // Friday Harbour	8331	B1	8:36	ONTIME	SJ
-            // Friday Harbour	1885	C13	8:36	ONTIME	NK
-            // Friday Harbour	1884	C7	8:40	ONTIME	NK
-            // Friday Harbour	8336	B7	8:56	ONTIME	SJ
-            // Friday Harbour	1883	C2	8:56	ONTIME	NK
-            // Friday Harbour	1889	C4	9:00	Cancelled	NK
-
+            { mode: 'train', code: '', gate: 'B', time: new Date('10/29/2018 08:36'), status: 'BOARDING' },
+            { mode: 'flight', code: 'SJ8331', gate: 'B1', time: new Date('10/29/2018 08:36'), status: 'BOARDING' },
+            { mode: 'flight', code: 'NK1885', gate: 'C13', time: new Date('10/29/2018 08:40'), status: 'BOARDING' },
+            { mode: 'flight', code: 'NK1884', gate: 'C7', time: new Date('10/29/2018 08:56'), status: 'On time' },
+            { mode: 'flight', code: 'SJ8336', gate: 'B7', time: new Date('10/29/2018 08:56'), status: 'On time' },
+            { mode: 'flight', code: 'NK1883', gate: 'C2', time: new Date('10/29/2018 09:00'), status: 'On time' }
         ],
         attractions: [
             {
@@ -141,18 +116,11 @@ export const DestinationsInfo = [
         status: 'BOARDING',
         options: [
             { mode: 'train', code: '', gate: 'B', time: new Date('10/29/2018 08:36'), status: 'BOARDING' },
-            { mode: 'flight', code: 'SJ8331', gate: 'B1', time: new Date('10/29/2018 08:36'), status: 'ONTIME' },
-            { mode: 'flight', code: 'NK1885', gate: 'C13', time: new Date('10/29/2018 08:40'), status: 'ONTIME' },
-            { mode: 'flight', code: 'NK1884', gate: 'C7', time: new Date('10/29/2018 08:56'), status: 'ONTIME' },
-            { mode: 'flight', code: 'SJ8336', gate: 'B7', time: new Date('10/29/2018 08:56'), status: 'ONTIME' },
-            { mode: 'flight', code: 'NK1883', gate: 'C2', time: new Date('10/29/2018 09:00'), status: 'ONTIME' }
-            // B	8:00 AM
-            // Friday Harbour	8331	B1	8:36	ONTIME	SJ
-            // Friday Harbour	1885	C13	8:36	ONTIME	NK
-            // Friday Harbour	1884	C7	8:40	ONTIME	NK
-            // Friday Harbour	8336	B7	8:56	ONTIME	SJ
-            // Friday Harbour	1883	C2	8:56	ONTIME	NK
-            // Friday Harbour	1889	C4	9:00	Cancelled	NK
+            { mode: 'flight', code: 'SJ8331', gate: 'B1', time: new Date('10/29/2018 08:36'), status: 'BOARDING' },
+            { mode: 'flight', code: 'NK1885', gate: 'C13', time: new Date('10/29/2018 08:40'), status: 'BOARDING' },
+            { mode: 'flight', code: 'NK1884', gate: 'C7', time: new Date('10/29/2018 08:56'), status: 'On time' },
+            { mode: 'flight', code: 'SJ8336', gate: 'B7', time: new Date('10/29/2018 08:56'), status: 'On time' },
+            { mode: 'flight', code: 'NK1883', gate: 'C2', time: new Date('10/29/2018 09:00'), status: 'On time' }
         ],
         attractions: [
             {
@@ -178,8 +146,8 @@ export const DestinationsInfo = [
         status: 'BOARDING',
         options: [
             { mode: 'train', code: '', gate: 'A', time: new Date('10/29/2018 08:00'), status: 'BOARDING' },
-            { mode: 'flight', code: 'SJ8686', gate: 'B2', time: new Date('10/29/2018 08:10'), status: 'ONTIME' },
-            { mode: 'flight', code: 'SJ8335', gate: 'B9', time: new Date('10/29/2018 09:00'), status: 'DELAYED' },
+            { mode: 'flight', code: 'SJ8686', gate: 'B2', time: new Date('10/29/2018 08:10'), status: 'BOARDING' },
+            { mode: 'flight', code: 'SJ8335', gate: 'B9', time: new Date('10/29/2018 09:00'), status: 'BOARDING' },
             { mode: 'flight', code: 'SJ8335', gate: 'B9', time: new Date('10/29/2018 09:00'), status: 'DELAYED' },
             { mode: 'train', code: '', gate: 'A', time: new Date('10/29/2018 11:00'), status: 'DELAYED' },
             { mode: 'train', code: '', gate: 'A', time: new Date('10/29/2018 14:00'), status: 'DELAYED' },
@@ -205,17 +173,13 @@ export const DestinationsInfo = [
     },
     {
         id: 'YACHT',
-        destination: 'Yacht Haven',
+        destination: 'Yacht Harbour',
         status: 'BOARDING',
         options: [
-            { mode: 'train', connecting: 'Roche Harbour', code: '', gate: 'A', time: new Date('10/29/2018 08:00'), status: 'BOARDING' },
-            { mode: 'train', connecting: 'Roche Harbour', code: '', gate: 'A', time: new Date('10/29/2018 11:00'), status: 'ONTIME' },
-            { mode: 'train', connecting: 'Roche Harbour', code: '', gate: 'A', time: new Date('10/29/2018 14:00'), status: 'ONTIME' },
-            { mode: 'train', connecting: 'Roche Harbour', code: '', gate: 'A', time: new Date('10/29/2018 17:00'), status: 'ONTIME' }
-            // A	8:00 AM
-            // A	11:00 AM
-            // A	2:00 PM
-            // A	5:00 PM
+            { mode: 'train', code: '', gate: 'A', time: new Date('10/29/2018 08:00'), status: 'BOARDING' },
+            { mode: 'train', code: '', gate: 'A', time: new Date('10/29/2018 11:00'), status: 'BOARDING' },
+            { mode: 'train', code: '', gate: 'A', time: new Date('10/29/2018 14:00'), status: 'BOARDING' },
+            { mode: 'train', code: '', gate: 'A', time: new Date('10/29/2018 17:00'), status: 'BOARDING' }
         ],
         attractions: [
             {

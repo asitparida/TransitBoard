@@ -12,8 +12,8 @@
           <label class="value">{{option.gate}}</label>
         </div>
         <div class="dep-connecting" *ngIf="option?.mode === 'train'">
-          <label class="key">Connecting</label>
-          <label class="value">Roche Harbour</label>
+          <label class="key"><span *ngIf="option.connecting">Connecting</span></label>
+          <label class="value">{{option.connecting}}</label>
         </div>
         <div class="dep-connecting" *ngIf="option?.mode === 'flight'">
           <label class="key">AIRLINE</label>
@@ -21,7 +21,7 @@
         </div>
         <div class="dep-status">
           <label class="key">STATUS</label>
-          <label class="value">{{option.status}}</label>
+          <label class="value"><span [attr.data-status]="option.status">{{option.status}}</span></label>
         </div>
       </div>
     </div>
