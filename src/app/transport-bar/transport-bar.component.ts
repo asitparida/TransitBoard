@@ -17,7 +17,7 @@ export class TransportBarComponent implements OnInit, AfterViewInit {
   audioEl;
   higlighted = false;
   islandOtions = DestinationsInfo;
-  debouncedReset = _.debounce(this.reset, 15000);
+  debouncedReset = _.debounce(this.reset, 60000);
 
   constructor(private appService: AppService) { }
 
